@@ -80,7 +80,7 @@
 --- git fetch                                          : Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
 --- git merge                                          : También usamos el comando git fetch con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
 --- git pull                                           : Básicamente, git fetch y git merge al mismo tiempo.
---- git remote add origin urlClonGH                    : se realiza el enlace del repositorio local a nuestro repositorio remoto indicando la ruta ej: git remote add origin urlClonGH 
+--- git remote add origin urlClonGH                    : se realiza el enlace del repositorio local a nuestro repositorio remoto indicando la ruta ej: git remote add origin https://github.com/jdxcfgg/Documentacion_gitHub.git
 --- git remote -v                                      : deberia motrar los fetch que tenemos y los push enlazada al repositorio remoto al local
 --- git remote set-url origin                          : se cambia la conexion de repositorio remoto de https a SSH indicando la url de forma SSH
 --- git push origin master                             : se le envia la informacion de la rama (master) (repositorio local) , al repositorio remoto
