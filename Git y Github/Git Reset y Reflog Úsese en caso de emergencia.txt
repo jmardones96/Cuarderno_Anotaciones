@@ -1,0 +1,30 @@
+/*****************************************Git Reset y Reflog: Úsese en caso de emergencia****************************************/
+/*****************************************Git Reset y Reflog: Úsese en caso de emergencia****************************************/
+/*****************************************Git Reset y Reflog: Úsese en caso de emergencia****************************************/
+
+
+/*1*/ - Comando: // Para saber toda la historia del repositorio en general
+       * git reflog 
+
+/*2*/ - Comando:// Se resetea al hash indicado 
+       * git reset HEAD@{2}
+
+/*3*/ - Visualizar los status  para ver que archivo recuperar
+
+
+/*****************************************Git Reset y Reflog: Úsese en caso de emergencia****************************************/
+
+/*1*/ - Comando: // Para saber toda la historia del repositorio en general
+       * git reflog 
+
+/*2*/ - Comando:// Se resetea al hash indicado 
+       * git reset --hard HEAD@{2}
+
+/**/ - Visualizar los status  para ver que ese es el actual sin cambios 
+
+
+--- git reflog                                    : Trae el historia completo del repositorio en general 
+
+
+
+

@@ -1,0 +1,24 @@
+/*Comandos de eliminacion*/
+--- git rm                             : permite remover el archivo agregado Ej: git rm archivoVacio.txt
+--- git rm --cached                    : Permite eliminar un archivo al momento de subir los cambios, elimina el arcivo no guardado , solo esta en memoria ram   Ej: git rm --cached archivo.txt
+--- git rm --force                     : Permite eliminar un archivo Elimina los archivos de Git y del disco duro.   Ej: git rm --force archivo.txt
+--- git reset                          : Permite retroceder al un commit anterior, indicando el commit a retroceder se puede retroceder de 2 formas:
+                                         - git reset e312432ed23e3fdw2332d23f324 --soft       //Los cambios quedan para volver a guardar en el siguiente commit
+                                         - git reset e312432ed23e3fdw2332d23f324 --hard      // se elimina todo hata la version indicada a volver
+
+--- git tag                                            : Mustra la lista de todos los tag
+--- git show-ref --tags                                : muestra todos los tag y a que commit se encuentran asociados 
+--- git tag -d                                         : Elimina el tag indicado de repositorio local Ej: git tag -d nombreTag
+--- git push origin :refs/tags/nombreTags              : Permite eliminar el tag dormido en el repositorio remoto
+-*- git branch -m nombreBranchCambiar              : Permite Cambiar el nombre de la rama que se encuentra ubicado
+--- git branch -d nombre_rama                       : Eliminar Rama
+--- git push origin :nombreRama                    : Enviar al servidor remoto la eliminacion del branch  
+
+--- git cherry-pick                            : me traer las versiones del comint indicado en el comando EJ: git cherry-pick 32ComitIndicado
+--- git stash                                    : Nos vuelve al estado anterior del cambios, lo que se cambio queda en memoria temporal
+--- git stash list                               : Muestra los  stash existente en memoria
+--- git stash pop                                : Nos devuelve a los cambios guardados en memmoria.
+--- git stash branch nombreRama                  : Crea rama a partir del stash en memoria temporal.
+--- git stash drop                               : Nos permite eliminar el stash guardado
+
+--- git rebase master                            : mescla los cambio de la rama que se encuentra ubicado con la rama que deseja EJ : git rebase master 

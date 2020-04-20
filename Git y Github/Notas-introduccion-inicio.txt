@@ -1,0 +1,125 @@
+/***************************** ANOTACIONES DEL CURSO DE GIT Y GITHUB  **********************/
+
+/*QUE  ES GIT */
+- Git es un software de control de versiones diseñado por Linus Torvalds
+-  pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente.
+
+
+
+
+/*QUE ES GITHUB */
+- es una forja para alojar proyectos utilizando el sistema de control de versiones Git.
+- HACE UN HISORIAL DE CAMBIO DEL PROYECTO 
+
+
+
+
+
+/**INSTALACION DE GIT consejos**/
+
+https://git-scm.com/downloads
+
+--- ASEGURARSE DE QUE SE INSTALE EL GIT BASH
+
+--- AL INSTALAR ESCOGER LA OPCION DE "GIT FROM THE COMMAND LINE AND ALSO FROM 3RD-PARTY SOFWARE": ya que permite ultilizar el terminal de windos y la shell de github
+
+--- Windows y Linux comandos diferentes, graban el enter de formas diferentes y tienen muchas otras diferencias. 
+   Cuando instales Git Bash en Windows debes elegir si prefieres trabajar con la forma de Windows o la forma de UNIX (Linux y Mac) .
+
+--- Los comandos de UNIX son los más comunes entre los equipos de desarrollo.
+
+-*- Para poder abrir el terminal de comando de git utilizando los comandos de linux buscar en windows "Git Bash".
+
+
+
+/**INTRODUCCION Y CONSEJOS**/
+
+-*- verificar que se pueda visualizar las extensiones
+
+
+/******INTRODUCCION A LA TERMINAL Y LINEA DE COMANDOS DE GIT BASH*******/
+--- pwd          = Ubicacion en que carpeta se encuentra actualmente la terminal
+--- ls           = lista de archivos en la carpeta que se encuentran en ese momento.
+--- mkdir        = Permite crear carpeta Ej: mkdir  nombreCarpeta
+--- rm           = elimna el archivo indicado o completo todo el disco duro Ej: rm nombreArchivo.txt
+--- touch        = Permite crear archivos vacios Ej: touch nombreArchivo.txt
+--- cat          = muesta el contenido del archivo Ej: cat nombreArchivo.txt
+--- history      = Muestra el historial de comandos realizados.
+    !numeroHisry = muestra lo que se ejecuto en ese comando
+--- cd           = Para navegar entre carpetas Ejemplo : cd / .
+--- ls -al       = Muestra un listado de documento mostrando el total de archivos, incluyendo los ocultos.
+--- ls -l        = Muestra un listado de documento mostrando el total de archivos, no los archivos ocultos.
+--- ls -a        = Muestras los archivos pero no en lista
+--- clear        = Limpia la consola.
+--- tecla Tap    = realiza el atutollenado
+
+
+
+/********* COMANDOS BASICOS DE GIT  **************/
+
+/*****¿Qué es el staging y los repositorios? Ciclo básico de trabajo en Git*****/
+
+- activar el sistema de control de versiones de Git en tu proyecto, solo debes ejecutar el comando git init.
+
+- Este comando se encargará de dos cosas: primero, crear una carpeta .git, donde se guardará toda la base de datos con cambios atómicos de nuestro proyecto; y segundo, crear un área que conocemos como Staging
+
+- Archivos Tracked: son los archivos que viven dentro de Git
+                    no tienen cambios pendientes y sus últimas actualizaciones han sido guardadas en el repositorio gracias a los comandos git add y git commit.
+
+- Archivos Staged: son archivos en Staging. Viven dentro de Git y hay registro de ellos porque han sido afectados por el comando git add,
+                   aunque no sus últimos cambios. Git ya sabe de la existencia de estos últimos cambios, pero todavía no han sido guardados 
+                   definitivamente en el repositorio porque falta ejecutar el comando git commit.
+
+- Archivos Unstaged: entiéndelos como archivos “Tracked pero Unstaged”. Son archivos que viven dentro de Git pero no han sido afectados por el comando git add 
+                     ni mucho menos por git commit. Git tiene un registro de estos archivos, pero está desactualizado, sus últimas versiones solo están guardadas en el disco duro.
+
+- Archivos Untracked: son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por git add, así que Git no tiene registros de su existencia.
+
+
+
+
+/**Comandos para mover archivos entre los estados de Git**/
+
+- git status: nos permite ver el estado de todos nuestros archivos y carpetas.
+
+- git add: nos ayuda a mover archivos del Untracked o Unstaged al estado Staged.
+           Podemos usar git nombre-del-archivo-o-carpeta para añadir archivos y carpetas individuales
+            o git add -A para mover todos los archivos de nuestro proyecto (tanto Untrackeds como unstageds).
+
+- git reset HEAD: nos ayuda a sacar archivos del estado Staged para devolverlos a su estado anterior. 
+                  Si los archivos venían de Unstaged, vuelven allí. Y lo mismo se venían de Untracked.
+
+- git commit: nos ayuda a mover archivos de Unstaged a Staged. Esta es una ocasión especial, los archivos han sido guardado o actualizados en el repositorio.
+              Git nos pedirá que dejemos un mensaje para recordar los cambios que hicimos y podemos usar el argumento -m para escribirlo (git commit -m "mensaje").
+
+- git rm: este comando necesita alguno de los siguientes argumentos para poder ejecutarse correctamente:
+          - git rm --cached: Mueve los archivos que le indiquemos al estado Untracked.
+          - git rm --force: Elimina los archivos de Git y del disco duro. Git guarda el registro de la existencia de los archivos, por lo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+
+
+
+/**comandos de git**/
+
+--- git init : Inicia el repositorio en la carpeta ubicada
+--- gid add permite agregar archivos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

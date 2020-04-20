@@ -1,0 +1,20 @@
+
+/*****************************************Comandos y recursos colaborativos en Git y Github****************************************/
+/*****************************************Comandos y recursos colaborativos en Git y Github****************************************/
+/*****************************************Comandos y recursos colaborativos en Git y Github****************************************/
+
+
+--- git shortlog                                               : Muestra un log por persona
+--- git shortlog -sn                                           : Muestra las personas que han hechi comit
+--- git shortlog -sn --all                                     : Muestra las personas que han hechi commit hasta los borrados
+--- git shortlog -sn --all --no-merges                         : Muestra las personas que han hechi commit hasta los borrados pero no los merge reaizados
+--- git config --global alias.stasts "Comando"                 : Permite realizar un alias en la configuracion de un comando de git EJ : git config --global alias.stasts "git shortlog -sn --all --no-merges"
+--- git blame index.htm                                        : Muestra todo lo que le ha realizado al archivo y quien lo realizo  EJ : git blame index.htm
+--- git blame --help                                           : Abre una pagina donde se indica de como se debe utilizar el comando 
+--- git blame index.htm -L35,53                                : Muestra todo lo que le ha realizado al archivo y quien lo realizo desde la lineas indicadas "desde, hasta" EJ: git blame index.htm -L35,53
+--- git branch -r                                              : Permite ver las ramas remotas
+--- git branch -a                                              : Permite ver todas las ramas remotas hasta las que le falta el push 
+
+
+
+

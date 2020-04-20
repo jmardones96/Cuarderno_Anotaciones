@@ -1,0 +1,49 @@
+
+
+
+
+
+
+/********************************************** CREACION DE TAG PARA LOS COMMIT **********************************/
+/********************************************** CREACION DE TAG PARA LOS COMMIT **********************************/
+/********************************************** CREACION DE TAG PARA LOS COMMIT **********************************/
+
+/*1*/ - Comando:
+       *git tag -a v0.1 -m "mensaje anotacion" hasht
+        Ej : git tag -a NombreTagCrear -m "Resultado de las Primeras clases del curso" a15dsvffr
+
+/*2*/ - Comando://actualizamos la version del repositorio remoto
+       * git pull origin master
+
+/*3*/ - Comando: //Enviamos los tag creados en nuestro repositorio local al repositorio remoto
+       *git push origin --tag
+
+
+
+
+
+
+
+
+/********************************************** ELIMINACION DE TAG PARA LOS COMMIT **********************************/
+/********************************************** ELIMINACION DE TAG PARA LOS COMMIT **********************************/
+/********************************************** ELIMINACION DE TAG PARA LOS COMMIT **********************************/
+
+/*1*/ - Comando://visualizamos los tag creados
+        * show-ref --tags 
+   
+/*2*/ - Comando: //eliminamos el tag del repositorio local
+       * git tag -d NombreTagEliminar 
+
+/*3*/ - Comando : //nos traemos todas las modificaciones
+       * git pull origin master
+
+/*4*/ - Comando://subimos todos los cambios de los tags al repositorio local i
+       *git push origin --tags
+
+/*5*/ - Comando://Realizamos efectiva la eliminacion de tag creado
+       *git push origin :refs/tags/nombreTagEliminar
+
+
+
+

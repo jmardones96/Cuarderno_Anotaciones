@@ -1,0 +1,65 @@
+
+
+
+/**********************************************CONFIGURACION DE LAS LLAVES SSH EN LOCAL**********************************/
+
+/**********************************************CONFIGURACION DE LAS LLAVES SSH EN LOCAL**********************************/
+
+/**********************************************CONFIGURACION DE LAS LLAVES SSH EN LOCAL**********************************/
+
+/**********************************************CONFIGURACION DE LAS LLAVES SSH EN LOCAL**********************************/
+ 
+//SE DEBE TENER CADA LLAVE POR CADA COMPUTADOR PERSONA QUE SE UTILIZE
+
+
+/*0*/ - Comando :// se verifica que se encuentre corriendo ssh
+        *eval $(ssh-agent -s)
+
+/*1*/ - Comando ://se agrega comando que permite la creacion de la clave conectada al correo electronico
+        *ssh-keygen -t rsa -b 4096 -C "correo_asociado@gitYgithub.com"
+
+/*2*/ - //Muestra mensaje indicando donde debe guardar la llave, lo recomendable es guardarla en home
+
+/*3*/ - //Muestra mensaje indicando que ingreser una clave con espacios , es una clave mas que se agrega //puedes apretar ENTER y omitir poner clave
+       * //Muestra mensaje indicando que ingreses name , //puedes apretar ENTER y omitir poner name
+
+/*4*/ - //Muestra mensaje indicando donde se guardo la clave y muestra huella y mensajes indicado que la llave es de verdad, tambien muestra ramdon
+
+/*5*/ - //verificar que se crearon las llasves donde se indico
+
+
+/*6*/ - Comando :// se verifica que se encuentre corriendo ssh , indicando en el procedor 
+        *eval $(ssh-agent -s)
+
+/*7*/ - Comando ://se agrega llave publica indicando la ruta en donde se indico que se creara la llave (~/.ssh/id_rsa)( #ruta)
+        *ssh-add ~/.ssh/id_rsa
+
+
+
+/**********************************************CONFIGURACION DE LAS LLAVES SSH / CONECION A GITHJUB CON SSH **********************************/
+/**********************************************CONFIGURACION DE LAS LLAVES SSH / CONECION A GITHJUB CON SSH **********************************/
+/**********************************************CONFIGURACION DE LAS LLAVES SSH / CONECION A GITHJUB CON SSH **********************************/
+
+/*0*/ - Comando ://se agrega comando que permite la creacion de la clave conectada al correo electronico
+        *ssh-keygen -t rsa -b 4096 -C "correo_asociado@gitYgithub.com"
+
+/*1*/ - abrir llave ssh creada en tu computador y copiar, una vez copiada ir a github
+/*2*/ - abrir GitHub y abrir la opcion en la izquina donde esta mi avatar la opcion de "SETTINGS" O "CONFIGURACION"
+/*3*/ - mostrara una serie de obciones, uno se dirige a la opcion de "SSH and GPG keys" , nos permitira realizar hacer el enlaze de llaves publicas
+/*4*/ - abrira un modulo donde se mostrara las llaves asociadas a github o la opcion de asociar una nueva llave
+/*5*/ - abrira un modulo donde creara la nueva asociacion, donde se ingresa una descripcion de la llave y la llave publica.
+/*6*/ - verificar la asociacion 
+/**/ 
+/*7*/ - ir a nuestro repositorio y hacer click a la opcion clonar o descargar
+/*8*/ - se selecciona la opcion de usar SSH
+/*9*/ - se dirige a la consola a la carpeta del repositorio local
+
+/*10*/- Comando: //para ver url que esta asociado el repositorio y cambiar
+        *git remote -v 
+
+/*11*/- Comando: //se cambia la url del fetch y push origin por el formato SSH
+        *git remote set-url origin  git@github.com:jmardones96/Anotaciones-Git-GitHub.git
+
+/*12*/- Comando: //para ver url que esta asociado el repositorio y cambiar
+        *git remote -v  //verificar que cambio 
+

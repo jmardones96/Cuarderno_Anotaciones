@@ -1,0 +1,9 @@
+
+/**Errores de git hub y git***/
+-*- git commit                         : si agregas un commit sin comentario saldra un error, el cual te obliga a agregar un comentario, una vez agregado
+                                         el comentario se debe apretar la tecla "ESCAPE + SHIFT + ZZ" se ejecuta el commit y se guarda
+
+
+
+(master/MERGING)                       : Cuando no se completa un merge, puede ocurrir al encontrar un conflicto
+ 

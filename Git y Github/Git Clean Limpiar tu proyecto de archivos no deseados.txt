@@ -1,0 +1,18 @@
+/*****************************************Git Clean: Limpiar tu proyecto de archivos no deseados****************************************/
+/*****************************************Git Clean: Limpiar tu proyecto de archivos no deseados****************************************/
+/*****************************************Git Clean: Limpiar tu proyecto de archivos no deseados****************************************/
+
+** Nos sirve para eliminar archivos que estan para el push y antes del git add 
+** Para saber qué archivos vamos a borrar tecleamos git clean --dry-run
+** Para borrar todos los archivos listados (que no son carpetas) tecleamos git clean -f
+ 
+** Los archivos indicados en gitignore no se eliminan
+** Las carpetas se deben borrar a mano
+
+
+
+/*1*/ - git clean                                                   : Indica un error de que manera lo debes hacer
+/*2*/ - git clean --dry-run                                         : Simula lo que se va a borrar sin borrar
+/*3*/ - gi clean -f                                                 : Borrar los arhivos en el commit
+
+

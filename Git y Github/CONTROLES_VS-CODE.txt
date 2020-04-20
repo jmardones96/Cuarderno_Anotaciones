@@ -1,0 +1,4 @@
+/***Controles de visual code***/
+
+control + o = permite abrir un proyecto
+control + n = abre nuevo archivo

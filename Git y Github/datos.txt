@@ -1,0 +1,70 @@
+
+
+
+/**********************************************agregar un nuevo colaborador al proyecto**********************************/
+/**********************************************agregar un nuevo colaborador al proyecto**********************************/
+/**********************************************agregar un nuevo colaborador al proyecto**********************************/
+
+
+/*1*/ -// ir al repositorio de git
+/*2*/ -//ir a configuracion //setting
+/*3*/ -//ir a administrar acceso 
+/*4*/ -//enviar invitacion al correo del colaborador o su name de git
+/*5*/ -// ya el colaborador puede descargar y subir sus versiones realizando pull y úsh
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************Git Ignore**********************************/
+/**********************************************Git Ignore**********************************/
+/**********************************************Git Ignore**********************************/
+
+** Es una lista de archivos de los archivos que se van a ignorar
+
+/*1*/ - Creo un nuevo archivo llamador ".gitignore"
+/*2*/ - Se agrega las exteciones que se rechazara
+/*3*/ - se guardar y ese archivo rechazara esas extensiones al momento de subir al repo
+
+
+
+
+
+
+
+
+
+/**********************************************Readme.md**********************************/
+/**********************************************Readme.md**********************************/
+/**********************************************Readme.md**********************************/
+
+* El archivo se debe crear con la extencion de "md" y el nombre de "Readme"
+* Es un archivo con diseño html 
+* El archivo "Readme.md" se mostrara en el inicio del repositorio de nuestro proyecto
+
+
+
+
+
+
+
+
+/*****************************************Tu sitio web público con GitHub Pages**************************************/
+/*****************************************Tu sitio web público con GitHub Pages**************************************/
+/*****************************************Tu sitio web público con GitHub Pages**************************************/
+
+
+** Se accede al sitio "https://pages.github.com/" Para ver documentacion
+
+/*1*/ - Crear repositorio con el nombre de usuario.github.io EJ: "jmardones96.github.io" (Repositorio Publico)
+/*2*/ - Subir Proyecto al repositorio con pagina "index.htm" (Obligatorio)
+/*3*/ - Ir a configuracion y bajar hasta el final donde se indica "Páginas de GitHub"
+/*4*/ - Se debe indicar que tomara la rama maestra 
+

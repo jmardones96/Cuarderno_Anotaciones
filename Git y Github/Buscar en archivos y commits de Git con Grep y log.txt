@@ -1,0 +1,14 @@
+/*****************************************Buscar en archivos y commits de Git con Grep y log****************************************/
+/*****************************************Buscar en archivos y commits de Git con Grep y log****************************************/
+/*****************************************Buscar en archivos y commits de Git con Grep y log****************************************/
+
+
+--- git grep                                                  : Muestra donde esta la palabra indicada EJ: git grep Palabra
+--- git grep -n                                               : Muestra donde esta la palabra y en que linea se encuentra la palabra indicada EJ: git grep -n Palabra
+--- git grep -c                                               : Muestra la cantidad de veces que aparece la palabra indicada por archivo EJ: git grep -c Palabra
+--- git grep "<p>"                                            : Muestra donde esta la palabra indicada de html EJ: git grep "<p>"
+--- git grep -c "<p>"                                         : Muestra la cantidad de veces que aparece la palabra indicada en html por archivo EJ: git grep -c "<p>"
+--- git log -S "cabecera"                                     : Busca entre los commit la palabra indicada EJ: git log -S Palabra
+
+
+

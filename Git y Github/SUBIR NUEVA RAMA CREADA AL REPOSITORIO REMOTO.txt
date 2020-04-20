@@ -1,0 +1,43 @@
+
+
+
+
+
+/********************************************** SUBIR NUEVA RAMA CREADA AL REPOSITORIO REMOTO **********************************/
+/********************************************** SUBIR NUEVA RAMA CREADA AL REPOSITORIO REMOTO **********************************/
+/********************************************** SUBIR NUEVA RAMA CREADA AL REPOSITORIO REMOTO **********************************/
+
+/*1*/ - // nos ubicamos en la rama maestra para que la nueva rama se encuentre con la actualizacion mas reciente
+       // en el momento que generes un nuevo brach sera igual al branch que te encuentras ubicado
+
+/*2*/ - Comando: //Se crea el branch con su nombre correspondiente
+       * git branch nuevoBranch
+
+/*3*/ - Comando: // se verifica la creacion del brach
+       * git branch
+
+/*4*/ - Comando:// se envia el branch creado al repositorio remoto
+       * git push origin nombreBranchCreado
+
+/*5* - Vefigicar ne gitHub
+
+
+
+
+
+
+
+/**********************************************COMO SUBIR  TU REPOSITORIO DE GIT A GITHUB**********************************/
+/**********************************************COMO SUBIR  TU REPOSITORIO DE GIT A GITHUB**********************************/
+/**********************************************COMO SUBIR  TU REPOSITORIO DE GIT A GITHUB**********************************/
+
+/*1*/ - //Te ubicas en la rama que quieres subir los cambios
+
+
+/*2*/ - Comando : //Comando que permite el Add y el commit a la vez para guardar los cambios 
+       * git commit -am "Comentario"
+
+/*3*/ - Comando : //Envia los cambios de tu branch al repositorio remoto
+       * git push origin nombreBranch
+
+

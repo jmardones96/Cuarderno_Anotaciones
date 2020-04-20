@@ -1,0 +1,19 @@
+
+/*****************************************Git Stash: Guardar cambios en memoria y recuperarlos después****************************************/
+/*****************************************Git Stash: Guardar cambios en memoria y recuperarlos después****************************************/
+/*****************************************Git Stash: Guardar cambios en memoria y recuperarlos después****************************************/
+
+* Stash nos permite guardar un cambio en memoria temporal
+* Nos permite devolver el cambio o avanzar
+* 
+
+
+--- git stash                                    : Nos vuelve al estado anterior del cambios, lo que se cambio queda en memoria temporal
+--- git stash list                               : Muestra los  stash existente en memoria
+--- git stash pop                                : Nos devuelve a los cambios guardados en memmoria.
+--- git stash branch nombreRama                  : Crea rama a partir del stash en memoria temporal.
+--- git stash drop                               : Nos permite eliminar el stash guardado
+
+--- git rebase master                            : mescla los cambio de la rama que se encuentra ubicado con la rama que deseja EJ : git rebase master 
+
+

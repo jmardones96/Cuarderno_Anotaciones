@@ -1,0 +1,152 @@
+
+/********* COMANDOS BASICOS DE GIT  **************/
+
+/*****¿Qué es el staging y los repositorios? Ciclo básico de trabajo en Git*****/
+
+- activar el sistema de control de versiones de Git en tu proyecto, solo debes ejecutar el comando git init.
+
+- Este comando se encargará de dos cosas: primero, crear una carpeta .git, donde se guardará toda la base de datos con cambios atómicos de nuestro proyecto; y segundo, crear un área que conocemos como Staging
+
+- Archivos Tracked: son los archivos que viven dentro de Git
+                    no tienen cambios pendientes y sus últimas actualizaciones han sido guardadas en el repositorio gracias a los comandos git add y git commit.
+
+- Archivos Staged: son archivos en Staging. Viven dentro de Git y hay registro de ellos porque han sido afectados por el comando git add,
+                   aunque no sus últimos cambios. Git ya sabe de la existencia de estos últimos cambios, pero todavía no han sido guardados 
+                   definitivamente en el repositorio porque falta ejecutar el comando git commit.
+
+- Archivos Unstaged: entiéndelos como archivos “Tracked pero Unstaged”. Son archivos que viven dentro de Git pero no han sido afectados por el comando git add 
+                     ni mucho menos por git commit. Git tiene un registrog de estos archivos, pero está desactualizado, sus últimas versiones solo están guardadas en el disco duro.
+
+- Archivos Untracked: son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por git add, así que Git no tiene registros de su existencia.
+
+
+/**comandos de git**/
+
+--- git init     : Inicia el repositorio en la carpeta ubicada
+--- git add      : permite agregar archivos al repositorio ej: git add .archivoVacio.txt
+--- git rm       : permite remover el archivo agregado Ej: git rm archivoVacio.txt
+--- commit -m "" : permite enviar el archivo al repositorio donde estan todos los cambios realizados al repositorio real.
+--- checkout     : Trae todos los cambios desde el repositorio:
+
+
+
+
+/******¿Qué es un Branch (rama) y cómo funciona un Merge en Git?********/
+
+- Git es una base de datos muy precisa con todos los cambios y crecimiento que ha tenido nuestro proyecto
+- Los commits son la única forma de tener un registro de los cambios
+- Por defecto, siempre empezamos en la rama master 
+- Crear una nueva rama se trata de copiar un commit (de cualquier rama), pasarlo a otro lado (a otra rama) y continuar el trabajo de una parte específica de nuestro proyecto sin afectar el flujo de trabajo principal
+- combinar estas ramas (sí, hacer “merge”) puede generar conflictos
+- Algunos archivos pueden ser diferentes en ambas ramas. 
+
+
+
+/******************************************************Comandos*************************************************************/
+/******************************************************Comandos*************************************************************/
+/******************************************************Comandos*************************************************************/
+
+
+
+
+
+
+
+
+
+/**comandos de git**/
+
+--- git init                           : Inicia el repositorio en la carpeta ubicada
+-*- git add                            : permite agregar archivos al repositorio ej: git add .archivoVacio.txt
+-*- git add .                          : permite agregar archivos todos los archivos del repositorio
+--- commit -m ""                       : permite enviar el archivo al repositorio donde estan todos los cambios realizados al repositorio real.
+-*- commit -am ""                      : permite enviar el archivo al repositorio donde estan todos los cambios realizados al repositorio real con comentatio,
+                                         Tambien se ahorra el git add .  con los archivos ya iniciados // los archivos nuevos se le debe hacer git add .
+--- checkout                           : Trae todos los cambios desde el repositorio trae los cambios de la rama indicada :
+--- git branch                         : Permite crear una nueva rama en la cual se puede trabajar una nueva version EJ: git branch cabecera  // git branch : pos si solo muertra todos los branch
+-*- git branch -m nombreBranchCambiar  : Permite Cambiar el nombre de la rama que se encuentra ubicado
+--- git branch -d nombre_rama           : Eliminar Rama
+--- git push origin :nombreRama        : Enviar al servidor remoto la eliminacion del branch  
+--- git status                         : Permite ver el estado de del proyecto , que archivo esta afura y cuales esta adenro y a que rama pertenece
+--- git rm                             : permite remover el archivo agregado Ej: git rm archivoVacio.txt
+--- git rm --cached                    : Permite eliminar un archivo al momento de subir los cambios, elimina el arcivo no guardado , solo esta en memoria ram   Ej: git rm --cached archivo.txt
+--- git rm --force                     : Permite eliminar un archivo Elimina los archivos de Git y del disco duro.   Ej: git rm --force archivo.txt
+--- git config                         : Muestras todas las configuaraciones de git
+--- git config --list                  : Muestras todas las configuaraciones por defecto de git y lo que le falta
+--- git config -l                      : Muestras todas las configuaraciones por defecto de git y lo que le falta
+--- git config --list --show-origin    : Muestras todas las configuaraciones y donde estan guardadas
+--- git config --global user.name      : Permite cambiar el nombre de Usuario EJ : git config --global user.name "Nombre ejemplo"
+--- git config --global user.email     : Permite cambiar el email del Usuario EJ : git config --global user.name "correo@ejmplo.com"
+--- git log                            : Muestra toda la historia de un archivo Ej: git log archivo.txt
+--- git log --stat                     : Muestra la historia de todos los archivos cambiados y cuanto se cambio
+--- git log --all                      : Muestra toda la historia desde los inicios
+--- git show                           : Muestra los cambios realizados sobre el archivo Ej: git show archivo.txt
+--- git diff                           : Muestra la diferencia de un commit con otro commit del proyecto EJ: "git diff 23fdw453454r 4rf3ef34tg" // Primero se declara el viejo y segundo se declara el commit mas reciente
+--- git reset                          : Permite retroceder al un commit anterior, indicando el commit a retroceder se puede retroceder de 2 formas:
+                                         - git reset e312432ed23e3fdw2332d23f324 --soft       //Los cambios quedan para volver a guardar en el siguiente commit
+                                         - git reset e312432ed23e3fdw2332d23f324 --hard      // se elimina todo hata la version indicada a volver
+
+--- git clone                                          : Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta .git.
+--- git push                                           : Luego de hacer git add y git commit debemos ejecutar este comando para mandar los cambios al servidor remoto.
+--- git fetch                                          : Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+--- git merge                                          : También usamos el comando git fetch con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+--- git pull                                           : Básicamente, git fetch y git merge al mismo tiempo.
+--- git remote add origin urlClonGH                    : se realiza el enlace del repositorio local a nuestro repositorio remoto indicando la ruta ej: git remote add origin urlClonGH 
+--- git remote -v                                      : deberia motrar los fetch que tenemos y los push enlazada al repositorio remoto al local
+--- git remote set-url origin                          : se cambia la conexion de repositorio remoto de https a SSH indicando la url de forma SSH
+--- git push origin master                             : se le envia la informacion de la rama (master) (repositorio local) , al repositorio remoto
+--- git pull origin master                             : se trae todos los cambios y documentos del mundo remoto a nuestra rama del pc
+--- git pull origin master --allow-unrelated-histories : permite realizar un merge con el mundo remoto , uniendo los commit y bajando toda los documentos del mundo remoto al pc
+--- git log --all --graph --decorate --oneline         : Permite ver todos los commit realizados al repositorio de forma grafica 
+--- git tag                                            : Mustra la lista de todos los tag
+--- git tag -a v0.1 -m                                 : Permite crear Tag y asociar comentario y asociarlo a un commit Ej : git tag -a NombreTagCrear -m  "comentario" 1d548e
+--- git tag -a dormido -m                              : Permite crear Tag y asociar comentario Ej : git tag -a nombreTag -m  "comentario" 1d548e
+--- git show-ref --tags                                : muestra todos los tag y a que commit se encuentran asociados 
+--- git push origin --tags                             : Permite enviar al repositorio remoto los tag del repositorio local
+--- git tag -d                                         : Elimina el tag indicado de repositorio local Ej: git tag -d nombreTag
+--- git push origin :refs/tags/nombreTags              : Permite eliminar el tag dormido en el repositorio remoto
+--- git show-ref --tags                                : Muestra los tag y a que commit se encuentra asociado
+--- git show-branch                                    : Muestra todos los branch que existen
+--- git show-branch --all                              : Muestra todos los branch que existen, hasta los ocultos
+--- gitk                                               : Muestra una interfaz grafica de la historia de los commit y branch 
+
+--- git shortlog                                       : Muestra un log por persona
+--- git shortlog -sn                                   : Muestra las personas que han hechi comit
+--- git shortlog -sn --all                             : Muestra las personas que han hechi commit hasta los borrados
+--- git shortlog -sn --all --no-merges                 : Muestra las personas que han hechi commit hasta los borrados pero no los merge reaizados
+--- git config --global alias.stasts "Comando"         : Permite realizar un alias en la configuracion de un comando de git EJ : git config --global alias.stasts "git shortlog -sn --all --no-merges"
+--- git blame index.htm                                : Muestra todo lo que le ha realizado al archivo y quien lo realizo  EJ : git blame index.htm
+--- git blame --help                                   : Abre una pagina donde se indica de como se debe utilizar el comando 
+--- git blame index.htm -L35,53                        : Muestra todo lo que le ha realizado al archivo y quien lo realizo desde la lineas indicadas "desde, hasta" EJ: git blame index.htm -L35,53
+--- git branch -r                                      : Permite ver las ramas remotas
+--- git branch -a                                      : Permite ver todas las ramas remotas hasta las que le falta el push 
+
+
+--- git grep                                                  : Muestra donde esta la palabra indicada EJ: git grep Palabra
+--- git grep -n                                               : Muestra donde esta la palabra y en que linea se encuentra la palabra indicada EJ: git grep -n Palabra
+--- git grep -c                                               : Muestra la cantidad de veces que aparece la palabra indicada por archivo EJ: git grep -c Palabra
+--- git grep "<p>"                                            : Muestra donde esta la palabra indicada de html EJ: git grep "<p>"
+--- git grep -c "<p>"                                         : Muestra la cantidad de veces que aparece la palabra indicada en html por archivo EJ: git grep -c "<p>"
+--- git log -S "cabecera"                                     : Busca entre los commit la palabra indicada EJ: git log -S Palabra
+--- git reflog                                                : Trae el historia completo del repositorio en general 
+    
+--- git commit --amend                         : Permite guardar los cambios faltantes al commit anteriormente realizado 
+--- git cherry-pick                            : me traer las versiones del comint indicado en el comando EJ: git cherry-pick 32ComitIndicado
+--- git clean                                                   : Indica un error de que manera lo debes hacer
+--- git clean --dry-run                                         : Simula lo que se va a borrar sin borrar
+--- gi clean -f                                                 : Borrar los arhivos en el commit
+--- git stash                                    : Nos vuelve al estado anterior del cambios, lo que se cambio queda en memoria temporal
+--- git stash list                               : Muestra los  stash existente en memoria
+--- git stash pop                                : Nos devuelve a los cambios guardados en memmoria.
+--- git stash branch nombreRama                  : Crea rama a partir del stash en memoria temporal.
+--- git stash drop                               : Nos permite eliminar el stash guardado
+
+--- git rebase master                            : mescla los cambio de la rama que se encuentra ubicado con la rama que deseja EJ : git rebase master 
+
+
+
+
+
+
+
+

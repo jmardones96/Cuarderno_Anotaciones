@@ -1,0 +1,27 @@
+
+
+
+
+
+/*Comando de Trabajo*/
+--- git init                           : Inicia el repositorio en la carpeta ubicada
+-*- git add                            : permite agregar archivos al repositorio ej: git add .archivoVacio.txt
+-*- git add .                          : permite agregar archivos todos los archivos del repositorio
+--- commit -m ""                       : permite enviar el archivo al repositorio donde estan todos los cambios realizados al repositorio real.
+--- git reset                          : Permite histpryretroceder al un commit anterior, indicando el commit a retroceder se puede retroceder de 2 formas:
+                                         - git reset e312432ed23e3fdw2332d23f324 --soft       //Los cambios quedan para volver a guardar en el siguiente commit
+                                         - git reset e312432ed23e3fdw2332d23f324 --hard      // se elimina todo hata la version indicada a volver
+--- git remote add origin urlClonGH    : se realiza el enlace del repositorio local a nuestro repositorio remoto indicando la ruta ej: git remote add origin urlClonGH 
+--- git push origin master             : se le envia la informacion de la rama (master) (repositorio local) , al repositorio remoto
+--- git pull origin master             : se trae todos los cambios y documentos del mundo remoto a nuestra rama del pc
+--- git pull origin master --allow-unrelated-histories :permite realizar un merge con el mundo remoto , uniendo los commit y bajando toda los documentos del mundo remoto al pc
+
+--- git tag                                            : Mustra la lista de todos los tag
+--- git tag -a v0.1 -m                                 : Permite crear Tag y asociar comentario y asociarlo a un commit Ej : git tag -a NombreTagCrear -m  "comentario" 1d548e
+--- git show-ref --tags                                : muestra todos los tag y a que commit se encuentran asociados 
+--- git push origin --tags                             : Permite enviar al repositorio remoto los tag del repositorio local
+--- git tag -d                                         : Elimina el tag indicado de repositorio local Ej: git tag -d nombreTag
+--- git push origin :refs/tags/nombreTags              : Permite eliminar el tag dormido en el repositorio remoto
+
+
+

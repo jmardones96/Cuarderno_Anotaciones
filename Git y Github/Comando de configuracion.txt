@@ -1,0 +1,20 @@
+
+/*Comando de configuracion*/
+
+--- git config                         : Muestras todas las configuaraciones de git
+--- git config --list                  : Muestras todas las configuaraciones por defecto de git y lo que le falta
+--- git config --list --show-origin    : Muestras todas las configuaraciones y donde estan guardadas
+--- git config --global user.name      : Permite cambiar el nombre de Usuario EJ : git config --global user.name "Nombre ejemplo"
+--- git config --global user.email     : Permite cambiar el email del Usuario EJ : git config --global user.name "correo@ejmplo.com"
+--- git log                            : Muestra toda la historia de un archivo Ej: git log archivo.tx
+--- git diff                           : Muestra la diferencia de un commit con otro commit del proyecto EJ: "git diff 23fdw453454r 4rf3ef34tg" // Primero se declara el viejo y segundo se declara el commit mas reciente
+--- git push origin master             : se le envia la informacion de la rama (master) (repositorio local) , al repositorio remoto
+--- git pull origin master             : se trae todos los cambios y documentos del mundo remoto a nuestra rama del pc
+--- git pull origin master --allow-unrelated-histories :permite realizar un merge con el mundo remoto , uniendo los commit y bajando toda los documentos del mundo remoto al pc
+--- git remote set-url origin          : se cambia la conexion de repositorio remoto de https a SSH indicando la url de forma SSH
+
+--- git tag                                            : Mustra la lista de todos los tag
+--- git tag -a v0.1 -m                                 : Permite crear Tag y asociar comentario y asociarlo a un commit Ej : git tag -a NombreTagCrear -m  "comentario" 1d548e
+--- git push origin --tags                             : Permite enviar al repositorio remoto los tag del repositorio local
+--- git tag -d                                         : Elimina el tag indicado de repositorio local Ej: git tag -d nombreTag
+--- git push origin :refs/tags/nombreTags              : Permite eliminar el tag dormido en el repositorio remoto

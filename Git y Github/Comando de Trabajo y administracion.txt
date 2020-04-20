@@ -1,0 +1,29 @@
+--- git checkout                       : Trae todos los cambios desde el repositorio trae los cambios de la rama indicada :
+--- git branch                         : Permite crear una nueva rama en la cual se puede trabajar una nueva version EJ: git branch cabecera  // git branch : pos si solo muertra todos los branch
+--- git clone                          : Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta .git.
+--- git push                           : Luego de hacer git add y git commit debemos ejecutar este comando para mandar los cambios al servidor remoto.
+--- git fetch                          : Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+--- git merge                          : También usamos el comando git fetch con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+--- git pull                           : Básicamente, git fetch y git merge al mismo tiempo.
+--- git remote add origin urlClonGH    : se realiza el enlace del repositorio local a nuestro repositorio remoto indicando la ruta ej: git remote add origin urlClonGH 
+--- git remote -v                      : deberia motrar los fetch que tenemos y los push enlazada al repositorio remoto al local
+--- git remote set-url origin          : se cambia la conexion de repositorio remoto de https a SSH indicando la url de forma SSH
+--- git push origin master             : se le envia la informacion de la rama (master) (repositorio local) , al repositorio remoto
+--- git pull origin master             : se trae todos los cambios y documentos del mundo remoto a nuestra rama del pc
+--- git pull origin master --allow-unrelated-histories :permite realizar un merge con el mundo remoto , uniendo los commit y bajando toda los documentos del mundo remoto al pc
+
+--- git tag                                            : Mustra la lista de todos los tag
+--- git tag -a v0.1 -m                                 : Permite crear Tag y asociar comentario y asociarlo a un commit Ej : git tag -a NombreTagCrear -m  "comentario" 1d548e
+--- git show-ref --tags                                : muestra todos los tag y a que commit se encuentran asociados 
+--- git push origin --tags                             : Permite enviar al repositorio remoto los tag del repositorio local
+--- git tag -d                                         : Elimina el tag indicado de repositorio local Ej: git tag -d nombreTag
+--- git push origin :refs/tags/nombreTags              : Permite eliminar el tag dormido en el repositorio remoto
+--- git show-ref --tags                : Muestra los tag y a que commit se encuentra asociado
+--- git show-branch                    : Muestra todos los branch que existen
+--- git show-branch --all              : Muestra todos los branch que existen, hasta los ocultos
+--- gitk                               : Muestra una interfaz grafica de la historia de los commit y branch 
+-*- git branch -m nombreBranchCambiar              : Permite Cambiar el nombre de la rama que se encuentra ubicado
+--- git branch -d nombre_rama                       : Eliminar Rama
+--- git push origin :nombreRama                    : Enviar al servidor remoto la eliminacion del branch  
+
+

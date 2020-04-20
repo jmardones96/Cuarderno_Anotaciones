@@ -1,0 +1,20 @@
+
+/*****************************************Reconstruir commits en Git con amend****************************************/
+/*****************************************Reconstruir commits en Git con amend****************************************/
+/*****************************************Reconstruir commits en Git con amend****************************************/
+
+*** Se utiliza cuando se olvido subir un cambio al commit anterior
+*** los cambios realizados se suman al commit anteriormente realizado
+*** amend significa Remendar
+
+
+/*1*/ - Se guardar los cambios  
+/*2*/ - SE realiza el commit -am para guardar la informacion
+/*3*/ - Comando:
+       * git commit --amend
+
+--- git commit --amend                  : Permite guardar los cambios faltantes al commit anteriormente realizado 
+
+
+
+

@@ -1,0 +1,222 @@
+
+
+
+
+
+/********************************************** SUBIR NUEVA RAMA CREADA AL REPOSITORIO REMOTO **********************************/
+/********************************************** SUBIR NUEVA RAMA CREADA AL REPOSITORIO REMOTO **********************************/
+/********************************************** SUBIR NUEVA RAMA CREADA AL REPOSITORIO REMOTO **********************************/
+
+/*1*/ - // nos ubicamos en la rama maestra para que la nueva rama se encuentre con la actualizacion mas reciente
+       // en el momento que generes un nuevo brach sera igual al branch que te encuentras ubicado
+
+/*2*/ - Comando: //Se crea el branch con su nombre correspondiente
+       * git branch nuevoBranch
+
+/*3*/ - Comando: // se verifica la creacion del brach
+       * git branch
+
+/*4*/ - Comando:// se envia el branch creado al repositorio remoto
+       * git push origin nombreBranchCreado
+
+/*5* - Vefigicar ne gitHub
+
+
+
+
+
+
+
+/**********************************************COMO SUBIR  TU REPOSITORIO DE GIT A GITHUB**********************************/
+/**********************************************COMO SUBIR  TU REPOSITORIO DE GIT A GITHUB**********************************/
+/**********************************************COMO SUBIR  TU REPOSITORIO DE GIT A GITHUB**********************************/
+
+/*1*/ - //Te ubicas en la rama que quieres subir los cambios
+
+
+/*2*/ - Comando : //Comando que permite el Add y el commit a la vez para guardar los cambios 
+       * git commit -am "Comentario"
+
+/*3*/ - Comando : //Envia los cambios de tu branch al repositorio remoto
+       * git push origin nombreBranch
+
+
+
+
+
+
+
+/**********************************************ELIMINAR BRANCH EN REPOSITORIO REMOTO Y LOCAL **********************************/
+/**********************************************ELIMINAR BRANCH EN REPOSITORIO REMOTO Y LOCAL **********************************/
+/**********************************************ELIMINAR BRANCH EN REPOSITORIO REMOTO Y LOCAL **********************************/
+
+/*1*/ - Comando :// se indica el nombre de la rama a eliminar
+       * git branch -d nombre_rama_eliminar
+
+*2*/ - Comando : //se le envia actualizacion al servidor remoto 
+       * git push origin :nombre_rama_eliminar
+
+
+
+
+
+
+
+
+
+/**********************************************CAMBIAR DE NOMBRE DE BRANCH**********************************/
+/**********************************************CAMBIAR DE NOMBRE DE BRANCH**********************************/
+/**********************************************CAMBIAR DE NOMBRE DE BRANCH**********************************/
+
+
+/*1*/ -//Ubicarse en la rama se de desea cambiar el nombre
+
+/*2*/ - Comando ://Cambiar al nombre que se desea
+       * git branch -m nuevoNombre
+
+
+
+
+
+/**********************************************COMO SUBIR  TU REPOSITORIO DE GIT INICIAL A GITHUB**********************************/
+/**********************************************COMO SUBIR  TU REPOSITORIO DE GIT INICIAL A GITHUB**********************************/
+/**********************************************COMO SUBIR  TU REPOSITORIO DE GIT INICIAL A GITHUB**********************************/
+/**********************************************COMO SUBIR  TU REPOSITORIO DE GIT INICIAL A GITHUB**********************************/
+
+/*1*/ - Primero que todo ya debes tener a este punto un repositorio realizado en git con el cual ya cuente con un commit y registro
+/*2*/ - Despues te diriges a la pagina de "GitHub" y le das a la opcion de "Crear a new Repository"
+/*3*/ - Una ves realizado el paso anterio completas la informacion que solicita y le haces click a "Crear Repositorio"
+/*4*/ - Una vez creado el repositorio , se clona el repositorio de forma https con la consola
+/*5*/ - le decimos a git que le agregaremos un origen remoto de los archivos, en consola se ubica en el repositorio creado con git 
+
+
+/*6*/ - se agrega el comando:
+        * git remote add origin urlClonadaDeGitHun   // indicamos que en el remositorio que estamos (master) , es el original al que creamos en github remotamente
+        * enter                                     // se realiza el enlaze del repositorio remoto al de nuestro pc
+
+/*7*/ - se agrega comando :
+        *git remote  //deberia motrar origin , indicando que se encuentra enlazada remotamente
+
+/*8*/ - se agrega comando :
+        *git remote -v  //deberia motrar los fetch que tenemos y los push enlazada al repositorio remoto
+
+
+/*9*/ - se agrega comando :
+        *git push origin master  // se le envia la informacion de la rama (master) al repositorio remoto 
+
+/*10*/-  Se genera un error cuando se intenta enviar los archivos al repositorio remoto y el repositorio remoto ya cuenta con archivos que no estan en el del pc,
+
+/*11*/- se agrega comando:
+        *git pull origin master   // se trae todos los cambios del mundo remoto a nuestra rama del pc
+
+/*12*/- se agrega comando:
+        *git pull origin master --allow-unrelated-histories   // permite realizar un merge con el mundo remoto , uniendo los commit y bajando toda los documentos del mundo remoto al pc
+
+
+/*13*/ - se agrega comando :
+        *git push origin master  // se le envia la informacion de la rama (master) al repositorio remoto 
+
+/*14*/ - se agrega comando :
+        *git status // para ver estado 
+
+
+
+/*15*/ - Revisar en github los cambios 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************FLUJO DE TRABAJO**********************************/
+
+
+
+/***CREACION DE RAMA Y UBICARSE EN ELLA ***/
+
+-1-SABER ESTADO ACTUAL
+  *git status
+
+-2-CREAR RAMA
+  *git branch nuevaRamaCabecera
+
+-3-UBICARNOS EN LA NUEVA RAMA
+  *git  checkout nuevaRamaCabecera
+
+
+
+/***GUARDAR CAMBIOS SI SON NUEVOS ***/
+
+-1-SABER ESTADO ACTUAL DE LOS CAMBIOS
+  *git status
+
+-2-GUARDAR TODO LOS ARCHIVOS EN ESTADO UNTRACKED PARA PASARLOS A TRACKED Y QUEDEN EN STAGING
+  *git add .
+
+-3-GUARDAMOS LOS CAMBIOS EN LA RAMA UBICADA CON COMENTARIO 
+  *git commit -m "Comentario"
+
+-4-SABER ESTADO ACTUAL DE LOS CAMBIOS
+  *git status
+
+
+
+
+
+/***GUARDAR CAMBIOS SI NO SON NUEVOS ***/
+
+-1-SABER ESTADO ACTUAL DE LOS CAMBIOS
+  *git status
+
+-2-GUARDAMOS LOS CAMBIOS EN LA RAMA UBICADA CON COMENTARIO Y SIN HACER EL "git add ." YA QUE CUMPLE ESA FUNCION
+  *git commit -am "Comentario"
+
+-3-SABER ESTADO ACTUAL DE LOS CAMBIOS
+  *git status
+
+
+
+
+
+/***HACER MERGE GIT MERGE ***/
+//PARA HACER MERGE DEBEN TENER TODOS LOS ARCHIVOS EN STAGING EN EL REPOSITORIO GUARDADO
+
+-1-UBICARCE EN LA RAMA PRINCIPAL (RAMA DE PRODUCCION)
+  *git checkout master
+
+
+-2-DESDE LA RAMA PRINCIPAL HACER MERGE A LA RAMA DE TRABAJO A UNIR
+  *git merge cabecera "cabecera"
+
+
+
+
+
+/***HACER MERGE GIT MERGE CON CONFLICTO EN LOS COMANDOS ***/
+//PARA HACER MERGE DEBEN TENER TODOS LOS ARCHIVOS EN STAGING EN EL REPOSITORIO GUARDADO
+
+-1-UBICARCE EN LA RAMA PRINCIPAL (RAMA DE PRDUCCION)
+  *git checkout master
+
+
+-2-DESDE LA RAMA PRINCIPAL HACER MERGE A LA RAMA DE TRABAJO A UNIR
+  *git merge cabecera "cabecera" 
+  /MENSAJE DE CONFLICTO DE INFORMACION , MOSTRANDO EN QUE DOCUMENTO FUERON
+
+-3-REVISUAL VISUAL CODE O VISUAL ESTUDIO PARA VER DONDE INDICARON LOS CONFLICTOS 
+  /REVISAR LAS INCIDENCIAS Y SOLUCIONAR Y DECIDIR CON CUAL QUEDAR 
+
+-4-Guardar nuevamente la informacion
+
+
+
+
+     
