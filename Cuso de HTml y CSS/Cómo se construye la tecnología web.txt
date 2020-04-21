@@ -1,0 +1,177 @@
+
+
+
+/**/ - HTML :
+        * LLeva la estructura de la pagina
+
+
+/**/ - CSS  : 
+        * Es la encargada del estilo y el diseño
+
+
+/**/ - JS   :
+        * LLeva la parte funcionar y conexiones con servicios
+
+
+/**/ - FRONTEND : Parte del software que interactuan con el usuario
+      * interactua con : HTML , CSS , JS
+
+
+/**/ - Backend : Parte que procesa la entrada desde el front-end
+       * Realiza las coneciones del mismo sofware o de base de datos o otros servicios
+
+/**/ - Compiladores : Ayudan a las paginas a realizarlas mucho mas rapido
+
+
+/**/ - CRUD
+      *Create
+      *Read
+      *Update
+      *Delete
+
+/**/ - Database : Donde se aloja la informacion del sistema
+
+
+
+
+
+
+
+
+
+
+/******************************************************************Comprendamos Internet**********************************************************/
+/******************************************************************Comprendamos Internet**********************************************************/
+
+
+--- Interner :
+     * Es un conjunto descentralizado de redes de comunicacion interconectadas
+  
+
+--- Protocolos :
+     * Son conjunto de reglas o pautas que posibilitan que distintos elementos que forman parte de un sistema establezcan comunicaciones entre si.
+
+--- FTP : Protocolo
+     * Transferencia de archivos entre sistemas conectados a una red
+
+--- P2P (Peer to Peer): Protocolo
+     * Una computadora funciona como cliente y como servidor 
+
+
+
+--- Tegnologia de la informacion:
+     * Es la aplicacion de ordenadores y equipos de telecomunicacion para almacenar , recuperar , transmitir y manupular datos
+     * Se basa que muchos dispositivos se puedan comunicar entre si de manera rapida
+     
+
+--- Comunicacion Sincrona:
+    * ES LA COMUNICACION EN TIEMPO REAL
+
+--- Comunicacion Asincrona :
+    * COMUNICACION EN TIEMPO NO REAL
+
+
+
+
+
+
+
+
+
+
+/******************************************************************¿Cómo instalar ATOM?**********************************************************/
+/******************************************************************¿Cómo instalar ATOM?**********************************************************/
+
+
+1- Ingresa a https://atom.io/
+2- Descarga e instala la versión de ATOM de acuerdo a tu sistema operativo.
+3- Esta es la primera sección que vas a ver cuando abras ATOM, da click en el botón Install a package.
+4- En la sección Install a package busca: emmet y agrégalo a tu editor de texto. Esta herramienta nos ayudará a escribir código de manera más rápida.
+5- Te recomiendo que no instales otros paquetes, por ahora. Pues algunos pueden generar conflicto si no tienes claridad sobre su función.
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************************************************¿Cómo funciona HTML?**********************************************************/
+/******************************************************************¿Cómo funciona HTML?**********************************************************/
+
+
+** Significa "HYPER TEXT MARKUP LANGUAGE"
+** Es un sitema de marcas de hipertexto.
+** Se enfoca en la diferenciacion y sintesis
+
+
+******ESTRUCTURA BASICA DE HTML**
+-- html , head , meta , title , head , body , html
+
+
+
+   <!DOCTYPE html>
+   <html >
+   
+     <head>
+       <meta charset="utf-8">
+       <title></title>
+     </head>
+   
+     <body>
+    
+     </body>
+   
+   </html>
+
+*******Etiquetas Basicas
+
+** <h1>     : Texto de titulo heather
+** <div>    : Crear secciones o agrupar contenidos
+** <p>      : SE utilizan para crear parrafos de textos
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
