@@ -1,0 +1,228 @@
+
+**   justify-content: space-between;  = a los contenidos que se encuentran dentro del div los separa por contenidos de bloque
+
+** nav li{list-style: none;           = Quita los puntos en las listas}
+
+**   text-decoration: none;           = Quita la decoracion por defecto del texto
+
+** -webkit-                     = sirve para que los navegarores reconozcan la animacion
+
+/***********************Como declarar variables*******************************/
+/***********************Como declarar variables*******************************/
+
+/*Variables*/
+-- Como declarar variables y utilizarlas despues 
+  :root{
+  --green-color:#7ACC2D;
+  --white-color:white;
+  --black-color:#313337;
+
+  /*Tipografia*/
+  --normal:12px;
+  /*espaciado*/
+  --space10 : 10px;
+
+  /*box shadow*/
+  --box: 0 2px 1px #e6e5e9; 
+  }
+
+
+/***********************como animar un tutilo con opacidad*******************************/
+/***********************como animar un tutilo con opacidad*******************************/
+
+/*Clase de animacion*/
+
+.fadeIn{
+  /*Tiempo de duracion*/
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+
+  /*tipo de letra que tendra*/
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  
+  /*Nombre de la animacion que conecta*/
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+
+/*clase de conexion con los navegadores*/
+@keyframes fadeIn {
+  from{/*desde*/
+    opacity: 0; /*invisible*/
+  }
+  to{ /*hasta*/
+    opacity: 1; /*ha no invisible */
+  }
+}
+
+
+
+
+/***********************que la imagen aparezca de abajo*******************************/
+/***********************que la imagen aparezca de abajo*******************************/
+
+
+.fadeInDown{
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+  from{
+    opacity: 0;
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0);
+  }
+  to{
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+}
+
+
+
+
+
+
+/***********************que la imagen aparezca de arriba*******************************/
+/***********************que la imagen aparezca de arriba*******************************/
+
+
+.fadeInUp{
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  from{
+    opacity: 0;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+  }
+  to{
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+}
+
+
+
+
+
+
+
+/************************************ Formas de declarr un label con un input ************************************************/
+/************************************ Formas de declarr un label con un input ************************************************/
+
+ <label>
+  Edad:
+  <input type=”number” />
+ </label>
+
+/************************************/
+ <label for=”nombre”>Nombre:</label>
+ <input type=”text” id=”nombre” />
+
+
+
+
+
+
+
+
+/************************************ TERMINOS ************************************************/
+/************************************ TERMINOS ************************************************/
+
+
+*  Framework  :
+   * Es un marco de trabajo
+   * Es una base de trabajo o un molde
+   * Esta baso en alguna metodoligia
+   * Ejemplo: Bootstrap es un Framework de trabajo 
+
+
+* Libreria:
+   * Conjunto de rutinas, funciones que tienen un objetivo
+   * son funciones que tienen un objetivo establecido
+   
+
+
+
+/************************************ nav ************************************************/
+/************************************ nav ************************************************/
+
+<nav class="fadeInDown">
+     <img src="images/logo.png" alt="">
+     <ul>
+        <li>
+          <a href="#">Faqs</a></li>
+        <li>
+          <a href="#">Producto y descripción</a></li>
+     </ul>
+</nav>
+
+
+*****
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--space);
+  min-height: 60px;
+  background-color: var(--green-color);
+}
+
+nav a{
+  text-decoration: none;
+  color: var(--black-color);
+  font-size: var(--normal);
+}
+
+nav a:hover{
+  color: var(--white-color);
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li{
+  padding-right: 20px;
+  list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+
+
+/*Gif*/
+https://giphy.com/
+
+
+/*Fonts para HTML*/
+- https://fonts.google.com/
+
+
+
+/*NORMALIZAR CSS*/
+https://necolas.github.io/normalize.css/
+
+
+/*Framwork*/
+https://get.foundation/
+
+
+
+/*Integracion de contenido de otra pagina con la mia */
+https://publish.twitter.com/
+
+
+
+
+
+/*Paginas de PAgo*/
+https://www.paypal.com/
+https://www.payulatam.com/cl/tarifas/
