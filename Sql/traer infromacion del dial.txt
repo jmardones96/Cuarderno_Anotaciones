@@ -1,0 +1,1 @@
+SELECT * FROM TBL_SOLICRC_OPERACION where fecha_lectura is not null and obs_solicitud = ''  AND fecha_lectura  >= convert(date,GETDATE());

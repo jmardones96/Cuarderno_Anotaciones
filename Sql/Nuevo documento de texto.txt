@@ -1,0 +1,79 @@
+
+SELECT * FROM sys.all_objects WHERE NAME like '%resciliacion%'
+
+
+
+select * from TBL_USUARIO where nombre like '%david%'
+
+
+select * from TBL_PASO_GARANTIA_CARGA 
+SELECT TOP(1)* FROM TBL_GARANTIAS
+
+--Modificaciones
+-- ALTER TABLE TBL_PASO_GARANTIA_CARGA ADD Log_Operacion Varchar(150);
+
+
+
+--sp que reciba numero de operacion 
+--tbl_operacion
+--tbl_datovehiculo
+--tbl_persona
+--view_cliente
+--tbl_direccion
+
+RUT COMPRADO = PERSONA
+PERSONA A DIRECCION
+
+SELECT * FROM TBL_OPERACION
+SELECT TOP(10)* FROM TBL_DATO_VEHICULO
+SELECT TOP(1)* FROM VIEW_CLIENTES 
+SELECT TOP(1)* FROM TBL_DIRECCION
+SELECT TOP(1)* FROM TBL_PERSONA
+select * from TBL_TIPO_VEHICULO
+SELECT * FROM TBL_MODELO_VEHICULO
+SELECT * FROM TBL_SUCURSAL_CLIENTE
+
+
+ALTER PROCEDURE SP_DEVOLUCION_PLACAS 
+@Id_solicitud INT
+AS
+BEGIN
+
+select 
+PE.nombre            AS 'NombreCliente'    ,
+O.fecha_solicitud    AS 'Fecha'            ,   -- es igual a la fecha factura 
+PE.rut               AS 'RUT'              ,
+PE.dv                AS 'DV'               ,
+DI.direccion         AS 'DIRECCION'        ,  --?
+CO.nombre            AS 'NombreComuna'     ,
+CI.nombre            AS 'NombreCiudad'     ,
+O.n_factura          AS 'NumeroFactura'    ,
+                        'FechaFactura'     , --?
+TV.nombre            AS 'TipoVehiculo'     ,
+MV.nombre            AS 'MarcaVehiculo'    ,
+DV.modelo            AS 'ModeloVehiculo'   ,
+DV.ano               AS 'AnoVehiculo'      ,
+DV.color             AS 'ColorVehiculo'    ,
+DV.motor             AS 'MotroVehiculo'    ,
+DV.chassis           AS 'ChassisVehiculo'  ,
+DV.patente           AS 'PantenteVehiculo' ,
+SC.nombre            AS 'OFICINA'          ,  --? 
+O.id_solicitud       AS 'NumeroSolicitud'  ,
+GETDATE()            AS 'FechaHoy'         ,
+                        'NotaCredito'      ,  --?
+                        'FechaCredito'     
+
+from TBL_OPERACION               O
+INNER JOIN TBL_DATO_VEHICULO     DV   ON  O.id_solicitud       = DV.id_solicitud
+INNER JOIN VIEW_CLIENTES         VC   ON  O.id_cliente         = VC.id_cliente
+INNER JOIN TBL_PERSONA           PE   ON  O.rut_comprador      = PE.rut
+INNER JOIN TBL_DIRECCION         DI   ON  PE.rut               = DI.rut                  AND PE.id_comuna  = DI.id_comuna
+INNER JOIN TBL_COMUNA            CO   ON  CO.id_comuna         = DI.id_comuna
+INNER JOIN TBL_CIUDAD            CI   ON  CO.id_ciudad         = CI.id_ciudad
+INNER JOIN TBL_TIPO_VEHICULO     TV   ON  DV.codigo            = TV.codigo
+INNER JOIN TBL_MARCA_VEHICULO    MV   ON  DV.id_marca_vehiculo = MV.id_marca_vehiculo 
+INNER JOIN TBL_SUCURSAL_CLIENTE  SC   ON  O.id_sucursal        = SC.id_sucursal
+
+WHERE O.id_solicitud =  @Id_solicitud
+
+END

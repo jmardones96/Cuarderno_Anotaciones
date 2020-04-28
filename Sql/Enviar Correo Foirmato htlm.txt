@@ -1,0 +1,310 @@
+ALTER PROCEDURE SP_CORREO_SPIEV_ROBOT  
+
+AS
+BEGIN
+--VARIABLES AUTILIZAR
+DECLARE
+  @X_id_solicitud INT,
+  @X_nro_solicitud INT,
+  @X_patente varchar(250),
+  @X_anio_solicitud INT,
+  @X_estado_solicitud VARCHAR(250),
+  @X_obs_solicitud VARCHAR(250),
+  @X_fecha_solicitud DATETIME
+-- FIN VARIABLES AUTILIZAR
+
+--VARIABLES DE CORREO A UTILIZAR
+DECLARE
+@correo varchar(3000),          
+@mensaje varchar(1000),          
+@asunto varchar(1000),
+@TableHTML VARCHAR ( MAX )                                                                    
+--FIN VARIABLES DE CORREO A UTILIZAR            
+
+--************************************************************************************************************************************************************************
+--CABEZERA HTML
+--************************************************************************************************************************************************************************
+
+SET @tableHTML = '
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<style type="text/css">
+		body
+		{
+			margin: 0;
+    		padding: 0;
+    		font-family: sans-serif;
+    		background-color: #f9f9f9;
+		}
+		.contenedor
+		{
+			width: 86%;
+			margin: 0 auto;
+			background-color: #fff;
+			border: 1px solid #eee;
+			margin-top: 30px;
+			padding: 20px;
+		}
+		.logo
+		{
+			display: block;
+		}
+		.contenedor-cliente
+		{
+			padding: 0px 0px 0px 4px;
+		}
+		.contenedor-leyenda
+		{
+			text-align: justify;
+			padding: 0px 0px 10px 4px;
+			font-size: 13px;
+		}
+		.color-text
+		{
+			color : #464646;
+		}
+		.tabla-datos
+		{
+			border-collapse: collapse;
+			border: 1px solid #eee;
+			font-size: 12px;
+			width: 100%;
+			border-radius : 3px;
+		}
+		.tabla_colums
+		{
+			border-bottom: 1px solid #eee;
+    		background-color: #f7f7f7;
+    		color: #444;
+		}
+		.tabla_colums > tr > th
+		{
+			padding: 8px;
+    		font-size: 12px;
+		}
+		.tabla_rows
+		{
+			text-align: center;
+		}
+		.separador
+		{
+			margin-bottom: 20px;
+   			border-color: #0cacea;
+		}
+		.tabla_rows > tr
+		{
+			font-size: 12px;
+    		line-height: 30px;
+    		color: #616161;
+    		font-weight: bold;
+		}
+		.table_rows > tr > th
+		{
+			text-align: justify;
+		}
+		.text-aling-left
+		{
+			text-align: left !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="contenedor">
+		<div class="contenedor-header">
+			<img class="logo" width="130" height="30"  src="http://www.desarrollo.brandingpersonal.cl/agp/wp-content/uploads/logo_small.png" alt="logo Agp">
+			<div class="contenedor-cliente">
+				<h5 class="color-text">AGPSA : </h4>
+			</div>
+			<div class="contenedor-leyenda color-text">
+				Estimado equipo de operacion, envio informacion de las operaciones consuldas . Saludos, Equipo AGP. 
+			</div>
+			<hr class="separador" />
+			<div>
+				<h5>Aceptadas :</h5s>
+				<table class="tabla-datos">
+					<thead class="tabla_colums">
+						<tr>
+							<th>Id Solicitud</th>
+							<th>N° Solicitud</th>
+							<th>Patente</th>
+							<th>Año Solicitud</th>
+							<th>Observación</th>
+							<th>Fecha Solicitud</th>
+						</tr>
+					</thead>
+					<tbody class="tabla_rows">' 
+				
+--************************************************************************************************************************************************************************
+--TABLA DE ACEPTADAS
+--INICIO CURSOR ACEPTADO
+--************************************************************************************************************************************************************************
+
+ DECLARE CURSO_ACEPTADO CURSOR FOR    
+  SELECT 
+  O.id_solicitud,
+  O.nro_solicitud,
+  DV.patente,
+  O.anio_solicitud,
+  O.estado_solicitud,
+  O.obs_solicitud,
+  O.fecha_solicitud
+  FROM TBL_SOLICRC_OPERACION O WITH(NOLOCK)
+  INNER JOIN TBL_DATO_VEHICULO DV  WITH(NOLOCK) on dv.id_solicitud = O.id_solicitud
+  where fecha_lectura is not null  AND estado_solicitud LIKE '%ACEPTADA%' AND fecha_lectura  >= convert(date,GETDATE());
+
+  select * from TBL_SOLICRC_OPERACION
+
+OPEN CURSO_ACEPTADO                      
+FETCH NEXT FROM CURSO_ACEPTADO INTO 
+  @X_id_solicitud ,
+  @X_nro_solicitud ,
+  @X_patente,
+  @X_anio_solicitud ,
+  @X_estado_solicitud,
+  @X_obs_solicitud ,
+  @X_fecha_solicitud 
+                                          
+WHILE @@FETCH_STATUS = 0                            
+BEGIN   
+
+SET @TableHTML =@TableHTML + '
+<tr>
+<td>'+CAST(@X_id_solicitud AS VARCHAR(MAX))+'</td>
+<td>'+CAST(@X_nro_solicitud AS VARCHAR(MAX))+'</td>
+<td>'+CAST(@X_patente AS VARCHAR(MAX))+'</td>
+<td>'+CAST(@X_anio_solicitud AS VARCHAR(MAX))+'</td>
+<td>'+@X_obs_solicitud+'</td>
+<td>'+ CAST(@X_fecha_solicitud AS VARCHAR(MAX))+'</td>
+</tr>'
+FETCH NEXT FROM CURSO_ACEPTADO INTO 
+  @X_id_solicitud ,
+  @X_nro_solicitud ,
+  @X_patente,
+  @X_anio_solicitud ,
+  @X_estado_solicitud,
+  @X_obs_solicitud ,
+  @X_fecha_solicitud 
+  END                           
+  CLOSE CURSO_ACEPTADO                         
+  DEALLOCATE CURSO_ACEPTADO 
+
+--************************************************************************************************************************************************************************
+--FIN DE CURSOR ACEPTADO
+--************************************************************************************************************************************************************************
+
+
+--************************************************************************************************************************************************************************
+--INTERMEDIO
+--************************************************************************************************************************************************************************
+
+SET @TableHTML = @TableHTML + '</tbody>
+				</table>
+			</div>
+			<div>			
+				<h5>Rechazadas :</h5>
+				<table class="tabla-datos">
+					<thead class="tabla_colums">
+						<tr>
+							<th>Id Solicitud</th>
+							<th>N° Solicitud</th>
+							<th>Patente</th>
+							<th>Año Solicitud</th>
+							<th>Observación</th>
+							<th>Fecha Solicitud</th>
+						</tr>
+					</thead>
+					<tbody class="tabla_rows">'
+
+--************************************************************************************************************************************************************************
+--TABLA DE RECHAZADA
+--INICIO CURSOR RECHAZADA
+--************************************************************************************************************************************************************************
+DECLARE CURSO_RECHAZADO CURSOR FOR    
+  SELECT 
+  O.id_solicitud,
+  O.nro_solicitud,
+  DV.patente,
+  O.anio_solicitud,
+  O.estado_solicitud,
+  O.obs_solicitud,
+  O.fecha_solicitud
+  FROM TBL_SOLICRC_OPERACION O WITH(NOLOCK)
+  INNER JOIN TBL_DATO_VEHICULO DV  WITH(NOLOCK) on dv.id_solicitud = O.id_solicitud
+  where obs_solicitud <> '' AND fecha_lectura is not null  AND estado_solicitud LIKE '%RECHAZADA%' AND fecha_lectura  >= convert(date,GETDATE());
+
+OPEN CURSO_RECHAZADO                      
+FETCH NEXT FROM CURSO_RECHAZADO INTO 
+  @X_id_solicitud ,
+  @X_nro_solicitud ,
+  @X_patente,
+  @X_anio_solicitud ,
+  @X_estado_solicitud,
+  @X_obs_solicitud ,
+  @X_fecha_solicitud 
+                                          
+WHILE @@FETCH_STATUS = 0                            
+BEGIN 
+
+SET @TableHTML =@TableHTML + '
+<tr>
+<td>'+CAST(@X_id_solicitud AS VARCHAR(MAX))+'</td>
+<td>'+CAST(@X_patente AS VARCHAR(MAX))+'</td>
+<td>'+CAST(@X_nro_solicitud AS VARCHAR(MAX))+'</td>
+<td>'+CAST(@X_anio_solicitud AS VARCHAR(MAX))+'</td>
+<td>'+@X_obs_solicitud+'</td>
+<td>'+ CAST(@X_fecha_solicitud AS VARCHAR(MAX))+'</td>
+</tr>
+'
+
+FETCH NEXT FROM CURSO_RECHAZADO INTO 
+  @X_id_solicitud ,
+  @X_nro_solicitud ,
+  @X_patente,
+  @X_anio_solicitud ,
+  @X_estado_solicitud,
+  @X_obs_solicitud ,
+  @X_fecha_solicitud 
+
+END                                 
+CLOSE CURSO_RECHAZADO                         
+DEALLOCATE CURSO_RECHAZADO 
+--************************************************************************************************************************************************************************
+--FIN DE CURSOR ECHAZADO
+--************************************************************************************************************************************************************************
+
+
+--************************************************************************************************************************************************************************
+--FINAL 
+--************************************************************************************************************************************************************************
+SET @TableHTML = @TableHTML + '
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>'
+
+EXEC msdb.dbo.sp_send_dbmail          
+    @profile_name = 'Envio Mails',          
+    @recipients = 'notificacionesrnvm@agpsa.cl;',     --alejandro.zarate@agys.cl;pbecerra@agpsa.cl' 
+	@copy_recipients = ''  , 
+    @subject = 'Notificacion de Operaciones',   -- @asunto,
+    @body_format='HTML',     
+    @body = @TableHTML ,        
+    @query_result_width = 30000,                             
+    @query_result_separator = ' ' ,                  
+    @query_result_header = 1,                           
+    @query_result_no_padding = 0,                           
+    @exclude_query_output = 1
+
+
+END
+--FIN DE SP
+
+
+

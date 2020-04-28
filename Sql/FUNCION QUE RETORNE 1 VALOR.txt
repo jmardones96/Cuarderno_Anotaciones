@@ -1,0 +1,20 @@
+CREATE FUNCTION suma_NUM_P (@num1 int , @num2 int)  
+
+RETURNS INT  --EL TIPO DE VALOR QUE VA A RETORNAR
+
+AS  
+BEGIN
+
+DECLARE @RES INT
+
+SET @RES = @num1 + @num2
+
+RETURN @RES
+
+END
+
+--- UTILIZAMOS FUNCION 
+
+DECLARE @B INT
+SET @B = dbo.suma_NUM_P(1,2);
+SELECT @B

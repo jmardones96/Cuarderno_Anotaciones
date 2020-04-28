@@ -1,0 +1,84 @@
+DECLARE @TableHTML NVARCHAR ( MAX )
+
+set @TableHTML =                
+'<html>                 
+<head>                 
+</head>                 
+<body>                 
+ <center> 
+ 
+ <table border="1" bordercolor="#666666" width="500">                
+ <tr>                
+  <td>                 
+   <div> <img src="http://www.agpsa.cl/images/logo.png"> </div>                
+   <br>'                            
+                            
+  set @TableHTML  = @TableHTML +                 
+  '<div align="justify">                 
+   <font color="#01A9DB" size="2" face="Arial, Helvetica, sans-serif"> NOMBRE CLIENTE:                 
+   <br>                
+   <br>' +                 
+   '  Señor ESTO ES UNA PRUEBA' +                
+  '</div>'                            
+  set @TableHTML  = @TableHTML +                 
+  '<br>                
+  <center>         
+   <div>                
+    <font color="#333333">Miguel Claro 070 - Oficina 33 - Providencia - Santiago | (+562) 2328 0200                
+    </font>                 
+   </div>         
+  </center>                
+  </td>                 
+ </tr>                 
+ </table>                
+ </center>                
+</body>                
+</html>'                            
+--------------------------------------------------------------------------------------------------                            
+set @TableHTML  = @TableHTML +                 
+'<center>                
+ <br>                
+ <table  border="1" bordercolor="#666666"><font color="#fff" size="2" face="Arial, Helvetica, sans-serif">                
+ <tr style="background-color:#01A9DB; color:#fff">                
+  <td align="center">Nº</td>                
+  <td align="center">Nº OPERACION</td>                
+  <td align="center">PRODUCTO</td>                
+  <td align="center">RUT CLIENTE</td>                
+  <td align="center">ADQUIRIENTE</td>                
+ <td align="center">CHASSIS</td>                
+  <td align="center">FACTURA</td>                  
+ </tr>'                    
+           
+set @TableHTML  = @TableHTML + '<tr>'                            
+                             
+ set @TableHTML  = @TableHTML + '<td align="center"> A </td>'                           
+ set @TableHTML  = @TableHTML + '<td align="center"> A </td>'                            
+ set @TableHTML  = @TableHTML + '<td align="center"> A </td>'                            
+ set @TableHTML  = @TableHTML + '<td align="center"> A </td>'                
+  set @TableHTML  =@TableHTML + '<td align="center"> A </td>'                               
+ set @TableHTML  = @TableHTML + '<td align="center"> A </td>'                            
+ set @TableHTML  = @TableHTML + '<td align="center"> A </td>'                            
+                      
+                                                
+set @TableHTML  = @TableHTML + '</tr>'                            
+                            
+
+
+EXEC msdb.dbo.sp_send_dbmail          
+    @profile_name = 'Envio Mails',          
+    @recipients = 'jmardones@agpsa.cl;rcarmona@agpsa.cl',     --alejandro.zarate@agys.cl;pbecerra@agpsa.cl' 
+	@copy_recipients = 'jmardones@agpsa.cl'  , 
+    @subject = 'TEST',   -- @asunto,
+    @body_format='HTML',     
+    @body = @TableHTML ,        
+    @query_result_width = 30000,                             
+    @query_result_separator = ' ' ,                  
+    @query_result_header = 1,                           
+    @query_result_no_padding = 0,                           
+    @exclude_query_output = 1
+
+
+
+
+
+

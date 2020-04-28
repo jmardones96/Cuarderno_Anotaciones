@@ -1,0 +1,8 @@
+DECLARE @cnt INT = 0;
+
+WHILE @cnt < 4
+BEGIN
+
+   SET @cnt = @cnt + 1;
+   SELECT  @cnt
+END;

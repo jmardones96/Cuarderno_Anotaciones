@@ -1,0 +1,272 @@
+
+CREATE TABLE ALUMNO
+(rut int primary key not null,
+ primNombre varchar(20) not null,
+  segNombre varchar(20) not null,
+   apePaterno varchar(20) not null,
+	apeMaterno varchar(20) not null,
+	 sexo bit);
+
+CREATE TABLE CURSO(
+idCurso int primary key identity,
+ descripcion varchar(50),
+ rutAlumno int, 
+foreign key (rutAlumno) references ALUMNO(rut))
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+/*MODIFICAR (DLL)*/
+
+ALTER TABLE ALUMNO add primary key (rut); --AGREGAR una llave OK
+
+ALTER TABLE ALUMNO ADD fechaNacimiento DATETIME; --AGREGAR un COLUMNA a un tabla existente
+
+ALTER TABLE EMPLEADO ADD FOREIGN KEY (idDpto) REFERENCES DEPARTAMENTO(idDpto); --AGREGAR FK 
+
+ALTER TABLE ALUMNO alter column rut int not null; --MODIFICAR el nombre de una COLUMNA de una tabla existente
+
+SP_RENAME 'ALUMNO.fechaNacimiento','fecNac','COLUMN'; --cambiar nombre de una columna
+SP_RENAME 'ALUMNO', 'ALUMNOPEV'; --CAMBIAR NOMBRE de la tabla
+	  
+ALTER TABLE EMPLEADO DROP CONSTRAINT [FK__EMPLEADO__idDpto__145C0A3F]; --ALTERAR INFORMACION ELIMINANDO RELACION
+
+ALTER TABLE EMPLEADO DROP COLUMN idDpto; -- ELIMINAR EL COLUMNA
+
+DROP TABLE Alumno; --ELIMINAR TABLE
+
+DROP DATABSE Prueba1;-- ELIMINAR BASE DE DATOS
+
+TRUNCATE TABLE Alumnos --ELIMINA TODO LOS REGISTRO DE UNA TABLA
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+/*DML*/
+
+/*FORMAS DE INSETAR*/
+
+INSERT INTO ALUMNO(rut, primNombre, segNombre, apePaterno, apeMaterno, sexo) VALUES 
+					(123, 'juan', 'luis', 'diaz', 'perez', 1),
+					(456, 'luis', 'carlos', 'rojas', 'arena', 1),
+					
+INSERT INTO CURSO(descripcion, rutAlumno) VALUES 
+					('RED', 123);
+
+
+INSERT INTO DEPARTAMENTO VALUES (201,'INFORMATICA');
+INSERT INTO DEPARTAMENTO VALUES (202,'RRHH');
+INSERT INTO DEPARTAMENTO VALUES (203,'SERVICIOS GRAL');
+	
+
+/*FORMAS DE ACTUALIZAR*/
+
+/*MODIFICAR - ACTUALIZAR - GETDATE  //  MODIFICAR - ACTUALIZAR - GETDATE  //  MODIFICAR - ACTUALIZAR - GETDATE  //  */
+
+UPDATE ALUMNO SET apePaterno='PRUEBA', apeMaterno=' MODIF' WHERE rut=768; --actualizar con modificacion espesifica
+
+UPDATE ALUMNO SET fechaNacimiento = GETDATE(); --FORMATO FECHA AAAA-MM-DD-hh:mm:ss
+
+UPDATE ALUMNO SET estado=1 WHERE nroMatricula=20180101 AND rut = 1111; --actualizacion  con la conidcion (Y) que cumpla las dos  normas
+
+/*MODIFICAR - ACTUALIZAR - GETDATE  //  MODIFICAR - ACTUALIZAR - GETDATE  //  MODIFICAR - ACTUALIZAR - GETDATE  //  */
+
+/*FORMAS DE ELIMINAR*/
+
+/*DROP - DELETE - TRUNCATE  //  DROP DROP - DELETE - TRUNCATE  //  - DELETE - TRUNCATE  //  DROP - DELETE - TRUNCATE  //  */
+
+drop table CURSO; --eliminar una tabla completa
+DELETE EMPLEADO; --elimina datos de la tabla todos
+TRUNCATE TABLE CURSO; --elimina los datos de la tabla
+DELETE ALUMNO WHERE rut=768; --elimina los datos espesifico
+
+/*DROP - DELETE - TRUNCATE  //  DROP DROP - DELETE - TRUNCATE  //  - DELETE - TRUNCATE  //  DROP - DELETE - TRUNCATE  //  */
+
+
+/*FORMAS DE MOSTRAR*/
+
+SELECT * FROM ALUMNO
+
+/*= / != / OR / AND // = / != / OR / AND // = / != / OR / AND // = / != / OR / AND // = / != / OR / AND // = / != / OR / AND // */
+
+SELECT * FROM ALUMNO WHERE sexo =0;--mostrar datos espesificos 
+
+SELECT * FROM ALUMNO WHERE sexo !=1;--solo negacionde hombre buscaremos primera forma
+
+SELECT rut,primNombre FROM ALUMNO WHERE rut = 456 OR segNombre = 'carlos'; --mostramos datos espesificos con espesificacion  || 0
+
+SELECT rut,primNombre FROM ALUMNO WHERE rut = 456 AND segNombre = 'carlos';--segundo metodo   &&  y 
+/*= / != / OR / AND // = / != / OR / AND // = / != / OR / AND // = / != / OR / AND // = / != / OR / AND // = / != / OR / AND // */
+----------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+/*NOT IN - RANGO // NOT IN - RANGO // NOT IN - RANGO // NOT IN - RANGO // NOT IN - RANGO // NOT IN - RANGO // NOT IN - RANGO // */
+
+--que no cumpla con los requisitos de los inidcados en el ()
+SELECT codEmpleado, rut, nombres, apePaterno, apeMaterno, sueldo, idDpto, activo FROM EMPLEADO WHERE idDpto NOT in (201, 202)
+----------------------------------------------------------------------------------------------------------------------------------
+--mustra los que se encuntren en el rango indicado
+SELECT codEmpleado, rut, nombres, apePaterno, apeMaterno, sueldo, idDpto, activo FROM EMPLEADO WHERE sueldo >=400000 AND sueldo <600000
+
+/*NOT IN - RANGO // NOT IN - RANGO // NOT IN - RANGO // NOT IN - RANGO // NOT IN - RANGO // NOT IN - RANGO // NOT IN - RANGO // */
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+/*ORDER BY - DESC // ORDER BY - DESC // ORDER BY - DESC // ORDER BY - DESC // ORDER BY - DESC // ORDER BY - DESC // */
+
+--ORDEN DE LA A-Z
+SELECT codEmpleado, rut,nombres, apePaterno, apeMaterno, sueldo, idDpto, activo FROM EMPLEADO ORDER BY apePaterno
+--ORDEN DE LA Z-A
+SELECT codEmpleado, rut, nombres, apePaterno, apeMaterno, sueldo, idDpto, activo FROM EMPLEADO ORDER BY apePaterno DESC
+----------------------------------------------------------------------------------------------------------------------------------
+--ordena por apellidos
+SELECT codEmpleado, rut, nombres, apePaterno, apeMaterno, sueldo, idDpto, activo FROM EMPLEADO ORDER BY apePaterno, apeMaterno
+----------------------------------------------------------------------------------------------------------------------------------
+--ordena por sueldo y apellido decendentes
+SELECT codEmpleado, rut, nombres, apePaterno, apeMaterno, sueldo, idDpto, activo FROM EMPLEADO ORDER BY sueldo, apePaterno DESC
+----------------------------------------------------------------------------------------------------------------------------------
+
+/*ORDER BY - DESC // ORDER BY - DESC // ORDER BY - DESC // ORDER BY - DESC // ORDER BY - DESC // ORDER BY - DESC // */
+
+
+/*COUNT - MIN - MAX AVG - SUM - diferenciafrom  //   COUNT - MIN - MAX AVG - SUM - diferenciafrom  //  */
+
+ -- cuenta cantidad de datos con etiqueta
+SELECT COUNT (codEmpleado) 'cantidad de Empleados' FROM EMPLEADO
+
+--cuenta la cantidad de empleados por departamento
+SELECT COUNT (codEmpleado) 'cantidad de Empleados x Dptos', idDpto  FROM EMPLEADO GROUP BY idDpto 
+
+--cuenta la cantidad de empleados por departamento espesifico
+SELECT COUNT (codEmpleado) 'cantidad de Empleados' FROM EMPLEADO WHERE idDpto = 201
+
+----------------------------------------------------------------------------------------------------------------------------------
+SELECT MIN(sueldo) 'Renta Menor'FROM EMPLEADO --renta menor
+
+SELECT MAX(sueldo) 'Renta Menor'FROM EMPLEADO --renta mayor
+----------------------------------------------------------------------------------------------------------------------------------
+--muestra el minimo de 2 (X el top) agrupando y ordenado desendentemente por el sueldo 
+SELECT TOP 2 Min(sueldo) 'Renta Mayor', codEmpleado, rut, nombres, apePaterno FROM EMPLEADO
+GROUP BY sueldo, codEmpleado, rut, nombres, apePaterno
+ORDER BY sueldo DESC
+
+--muestra el minimo con la condicion epesificado por el departamento (idDpto)
+SELECT  MIN(sueldo) 'Renta Menor', codEmpleado, rut, nombres, apePaterno FROM EMPLEADO WHERE idDpto =202
+GROUP BY sueldo, codEmpleado, rut, nombres, apePaterno
+----------------------------------------------------------------------------------------------------------------------------------
+--promedio de cada departamento
+SELECT AVG(sueldo) 'Promedio sueldo x Dpto', idDpto FROM EMPLEADO GROUP BY idDpto 
+----------------------------------------------------------------------------------------------------------------------------------
+--suma todos los sueldo y muestra el total
+SELECT SUM(sueldo) 'Sueldo MENSUAL A NIVEL empresa' FROM EMPLEADO 
+--suma los sueldo por departamentos y muestra el total
+SELECT SUM(sueldo) 'Sueldo MENSUAL A NIVEL empresa', idDpto FROM EMPLEADO GROUP BY idDpto 
+
+--RESTAR O SACAR LA DIFERENCIA
+select Monto_inicial, Monto_Final, Monto_inicial - Monto_Final as Diferenciafrom Tabla
+
+
+/*COUNT - MIN - MAX AVG - SUM - diferenciafrom  //   COUNT - MIN - MAX AVG - SUM - diferenciafrom  //  */
+
+----------------------------------------------------------------------------------------------------------------------------------
+/*DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - */
+SELECT DISTINCT (apePaterno) FROM EMPLEADO --muestra los apellidos sin repetirlos
+/*DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - DISTINCT - */
+----------------------------------------------------------------------------------------------------------------------------
+
+/* UNION all -  UNION all - UNION all - UNION all - UNION all - UNION all - UNION all - UNION all - UNION all - UNION all - */
+--codigo del empleado unimos con deparatamento con union para mostrar
+SELECT codEmpleado 'CODIGO', nombres 'DETALLE' FROM EMPLEADO UNION all SELECT idDpto, descripcion FROM DEPARTAMENTO
+/* UNION all -  UNION all - UNION all - UNION all - UNION all - UNION all - UNION all - UNION all - UNION all - UNION all - */
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+/*JOIN  -  JOIN  -  JOIN  - JOIN - JOIN  -  JOIN  -  JOIN  - JOIN - JOIN  -  JOIN  -  JOIN  - JOIN - JOIN  -  JOIN  -  JOIN  - JOIN*/
+
+--se unen dos tablas con las refrencies en (ON) para sus llaves y mostrarlas
+SELECT E.codEmpleado, E.rut, E.nombres, E.apePaterno, E.apeMaterno, E.activo, E.sueldo, D.idDpto, D.descripcion
+  FROM EMPLEADO E
+  INNER JOIN DEPARTAMENTO D
+  ON E.idDpto = D.idDpto --CAMPO UNION centro
+  ---------------------------------------------------------------------------------------------------------------------------
+SELECT E.codEmpleado, E.rut, E.nombres, E.apePaterno, E.apeMaterno, E.activo, E.sueldo,
+ D.idDpto, D.descripcion
+  FROM EMPLEADO E
+  LEFT JOIN DEPARTAMENTO D
+  ON E.idDpto = D.idDpto --CAMPO UNION izquierda
+---------------------------------------------------------------------------------------------------------------------------
+SELECT E.codEmpleado, E.rut, E.nombres, E.apePaterno, E.apeMaterno, E.activo, E.sueldo,
+ D.idDpto, D.descripcion
+  FROM EMPLEADO E
+  RIGHT JOIN DEPARTAMENTO D
+  ON E.idDpto = D.idDpto --CAMPO UNION derecha
+
+  /*JOIN  -  JOIN  -  JOIN  - JOIN - JOIN  -  JOIN  -  JOIN  - JOIN - JOIN  -  JOIN  -  JOIN  - JOIN - JOIN  -  JOIN  -  JOIN  - JOIN*/
+  ---------------------------------------------------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------------------------------------------------
+	  ---------------------------------------------------------------------------------------------------------------------------
+
+
+/*IN-IS NULL-NOT EXISTS-(SELECT)-FROM A,E // IN-IS NULL-NOT EXISTS-(SELECT)-FROM A,E // IN-IS NULL-NOT EXISTS-(SELECT)-FROM A,E-  */
+
+--validamos los campos de las PK en cada tabla
+  SELECT codEmpleado, rut, nombres, apePaterno, idDpto FROM EMPLEADO  WHERE idDpto IN (SELECT idDpto FROM DEPARTAMENTO)
+  ---------------------------------------------------------------------------------------------------------------------------
+--revisamos las dos tablas con la condicion de departamento
+SELECT E.codEmpleado, E.rut, E.nombres, E.apePaterno, E.idDpto, D.descripcion FROM EMPLEADO E, DEPARTAMENTO D
+  WHERE E.idDpto = D.idDpto
+
+--revisamos los que se encuntre nulos segun la condicion
+  SELECT D.idDpto, d.descripcion FROM DEPARTAMENTO D left join EMPLEADO E on D.idDpto = E.idDpto WHERE E.idDpto is null
+
+--revisamos los no existentes
+SELECT D.idDpto, D.descripcion FROM DEPARTAMENTO D WHERE NOT EXISTS (SELECT E.idDpto FROM EMPLEADO E WHERE D.idDpto= E.idDpto);
+
+
+/*IN-IS NULL-NOT EXISTS-(SELECT)-FROM A,E // IN-IS NULL-NOT EXISTS-(SELECT)-FROM A,E // IN-IS NULL-NOT EXISTS-(SELECT)-FROM A,E-  */
+---------------------------------------------------------------------------------------------------------------------------
+
+/*GETDATE() - DATEADD -  DATEPART - CAST(DATE)  //  GETDATE() - DATEADD -  DATEPART - CAST(DATE)  //  GETDATE() - DATEADD -  DATEPART - CAST(DATE)  //  */
+
+SELECT GETDATE() 'HORA DEL SISTEMA',
+@auxFechaHora 'FECHA Y HORA A TRABAJAR',
+DATEADD(YEAR, 2, @auxFechaHora) 'SUMO AÑOS',
+DATEADD( MONTH, 5, @auxFechaHora ) 'SUMO MESES',
+DATEADD( DAY, 20, @auxFechaHora ) 'SUMO DIAS',
+DATEADD( HOUR, 2, @auxFechaHora ) 'SUMO HORAS',
+DATEADD( MINUTE, 20, @auxFechaHora ) 'SUMO MINUTOS',
+DATEADD( SECOND, 200, @auxFechaHora ) 'SUMO SEGUNDOS',
+--RESTAR
+DATEADD( YEAR, -2, @auxFechaHora ) 'RESTO AÑOS',
+DATEADD( MONTH, -5, @auxFechaHora ) 'RESTO MESES',
+DATEADD( DAY, -20, @auxFechaHora ) 'RESTO DIAS';
+
+--DESCOMPONER FECHAS
+SELECT GETDATE() 'FECHA Y HORA DEL SISTEMA',
+		DATEPART(YEAR, GETDATE()) 'SOLO EL AÑO',
+		DATEPART(MONTH, GETDATE()) 'SOLO EL MES',
+		DATEPART(DAY, GETDATE()) 'SOLO EL DIA',
+		DATEPART(MINUTE, GETDATE()) 'SOLO LOS MINITOS';
+
+SELECT CAST(DATEPART(DAY, GETDATE()) AS CHAR(2)) + '-' +
+		CAST(DATEPART(MONTH, GETDATE()) AS CHAR(2)) + '-' +
+		CAST(DATEPART(YEAR, GETDATE()) AS CHAR(4)) FECHA
+--DIFERENCIAS ENTRE FECHAS
+--MEDICION DE LA FECHA Y HORA SOLICTADO POR EL SISTEMAS Y COMPARADO CON FECHA Y HORA CONSULTA
+--NOS INDICA LA DIFERENCIAS ENTRE ESTAS DOS FECHAS Y HORAS CON LA FUNCION 'DATEDIFF'
+DECLARE @FechaNac AS DATETIME;
+SET @FechaNac = '1992-25-08 23:30';
+SELECT DATEDIFF(YEAR, @FechaNac, GETDATE()) 'DIFERENCIA EN AÑOS', 
+		DATEDIFF(MONTH, @FechaNac, GETDATE()) 'DIFERENCIA EN MESES', 
+		DATEDIFF(DAY, @FechaNac, GETDATE()) 'DIFERENCIA EN HORAS', 
+		DATEDIFF(HOUR, @FechaNac, GETDATE()) 'DIFERENCIA EN HORAS', 
+		DATEDIFF(MINUTE, @FechaNac, GETDATE()) 'DIFERENCIA EN MINUTOS', 
+		DATEDIFF(SECOND, @FechaNac, GETDATE()) 'DIFERENCIA EN SEGUNDOS';
+
+
+/*GETDATE() - DATEADD -  DATEPART - CAST(DATE)  //  GETDATE() - DATEADD -  DATEPART - CAST(DATE)  //  GETDATE() - DATEADD -  DATEPART - CAST(DATE)  //  */
+

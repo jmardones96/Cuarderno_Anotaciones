@@ -1,0 +1,32 @@
+
+--VARUABLES QUE SE UTILIZARAN EN CURSO 
+SON LAS MISMA VARIABLE QUE DEBE TENER LA TABLA QUE COPIAREMOS SUS DATOS A CCARPETA 
+
+DECLARE @Id_Credito int,                                
+@Rut_Cliente varchar(255),                                
+@Nombre_Cliente varchar(255),                                
+@Nombre_EF varchar(255), 
+
+
+
+DECLARE cCarpeta CURSOR FOR                                
+SELECT * FROM TBL_EJEMPLO where X = A                             
+-- Apertura del cursor                                
+OPEN cCarpeta                                
+-- Lectura de la primera fila del cursor                                
+FETCH cCarpeta INTO @Rut_Cliente , @Nombre_Cliente ,@Nombre_EF                               
+WHILE (@@FETCH_STATUS = 0 )
+
+BEGIN
+
+****CODIGO CON LA CUAL SE VA A VALIDAR POR LINEA
+
+
+                               
+FETCH cCarpeta INTO @Rut_Cliente , @Nombre_Cliente ,@Nombre_EF 
+END                                
+-- Cierre del cursor                                
+CLOSE cCarpeta                                
+-- Liberar los recursos                                
+DEALLOCATE cCarpeta                                 
+end    

@@ -1,0 +1,8 @@
+
+**** Consulta para ver si el dato esta repetido en la tabla ****
+
+
+select Cliente, count(Cliente)
+from dbo.Clientes
+group by Cliente
+having count(Cliente) > 1
