@@ -1,0 +1,75 @@
+/*Tipo de VAlores*/
+
+--Valores Primitivos
+
+40             = Numero
+"40"           = Texto
+true / false   = Booleano
+
+null           = Valores reservados
+undefined      = Valores reservados
+
+
+
+--
+[1,2,3] Array
+{nombre:"diego"}
+
+
+
+
+
+
+
+
+
+Codigo
+
+
+/*******************Codigo de Auditoria*******************************/
+
+** typeof : Permite identificar el tipo de datos quue le entregamos
+           -Ejemplo: typeof "23"
+  /  "string"
+
+
+
+** var    : Objeto que permite guardar diferentes tipos de valores
+           - Ejemplo : * var nombre    = "Joaquin";
+                       * var numero    = 2;
+                       * var verdar    = true;
+                       * var verdar    = false;
+                       * var nulo      = null;
+                       * var elementos = ["compataodo" , 1 , "otro"];
+                       * var persona   = {nombre:"pedro" , edar:30}
+
+
+
+
+/********************Formas de concatenar texto********************************/
+
+
+`Text ${variable}`   = Se  concatena el texto dentro de las comillas establesas mas la variable tipo texto
+                       que se encuentra adrentro de los corchetes con el sigo ${}
+
+
+
+
+/********************INFO********************************/
+ funtion 
+
+* Existen 2 tipos de funciones
+
+**Funciones Expresion
+
+var funcionVariable = function(a , b ){
+    return  a + b;
+}
+
+**Funciones Declarativas
+function saludarEstudiantes(estudiante)
+{
+ console.log(`Hola ${estudiante}`)   
+}
+
+

@@ -1,7 +1,23 @@
 
+/***Auditoria****/
+https://tinypng.com/
+https://css-tricks.com/essential-meta-tags-social-media/
+
 
 /*Gif*/
 https://giphy.com/
+
+
+
+
+/***css****/
+/*Generador de Sombra */
+https://www.cssmatic.com/es/box-shadow
+
+
+
+
+
 
 
 /*Fonts para HTML*/
@@ -11,6 +27,8 @@ https://giphy.com/
 
 /*NORMALIZAR CSS*/
 https://necolas.github.io/normalize.css/
+
+
 
 
 /*Framwork*/
