@@ -23,7 +23,39 @@ undefined      = Valores reservados
 
 
 
-Codigo
+/*******************CODE*******************************/
+
+** String(x)   // Permite transformar el valor a string
+** Numbre(x)   // Permite Transformar el valor a numero
+
+
+
+
+
+
+
+
+/////////////////////////Transformaciones///////////////////////////
+
+** String(x)   // Permite transformar el valor a string
+** Numbre(x)   // Permite Transformar el valor a numero
+
+
+
+
+
+//////////////////////////Acciones Dinamicas//////////////////////////
+
+
+** print()   //Abre la opcion de imprimir una captura de la pantalla de la pagina
+
+
+
+
+
+
+
+
 
 
 /*******************Codigo de Auditoria*******************************/
@@ -71,5 +103,113 @@ function saludarEstudiantes(estudiante)
 {
  console.log(`Hola ${estudiante}`)   
 }
+
+
+
+*****************************************SCOPE***************************************************
+Scope: Es el alcance de las variables que declaramos. Existe el Scope global y local.
+
+Global: es una variable que tiene un alcance en todo nuestro programa.
+Local: es una variable que tiene un alcance limitado, es decir que solo existen dentro de la función que se declara.
+
+
+
+
+
+
+
+
+
+
+
+
+*****************************************Hoisting***************************************************
+
+Breve resumen con explicación.
+
+// HOISTING
+    //Es la forma en que JS organiza las declaraciones
+
+        //  Como se escriben
+            sumar();
+            var x = 2;
+            functionsumar(){
+                var suma = x + y;
+                return suma;
+            }
+            var y = 1;
+
+        // Como JS lo organiza
+            functionsumar(){
+                var suma = x + y;
+                return suma;
+            }  
+             var x = 2;
+             var y = undefined;
+            sumar();
+             var y = 1;
+            // Primero se cargan las funciones, segundo la declaración de variables y el resto en el orden normal del código.
+
+
+
+
+
+
+*****************************************Coerción ***************************************************
+
+
+Coerción significa que es la forma en que podemos cambiar un tipo de valor a otro.
+
+Coerción implícita : es cuando el lenguaje nos ayuda y cambia de un tipo de valor a otro tipo.
+Coerción explicita : es la forma en que nosotros obligamos a que un valor de un tipo cambie a otro valor de otro tipo.
+
+
+
+
+
+
+
+/********************Valores: Truthy y Falsy********************************/
+
+**Respuesta :
+Valores: Truthy y Falsy
+Existen tipos de valores que son verdaderos: Truthy. Y valos que son falsos: Falsy.
+Esto son servirá cuando empecemos a generar condiciones o funciones en Javascript, 
+esto nos ayudará a validar si estas condiciones son verdaderas o falsas en ciertas acciones.
+
+
+- Boolean() //False
+- Boolean(0) //False
+- Boolean(null) //False
+- Boolean(undefined)//False
+- Boolean("") //False
+- Boolean(null) //False
+
+- Boolean(1) //true
+- Boolean(" ") //true
+- Boolean([]) //true
+- Boolean({}) //true
+- Boolean(function(){}) //true
+
+
+/********************Operadores: Asignación, Comparación y Aritméticos.********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
