@@ -1,0 +1,101 @@
+
+*************************************Datos Relevantes **************************************************
+
+ * se usa como modelo de programación asincrónica de tareas (TAP)
+
+
+
+
+*********************************************Reglas***************************************
+
+
+
+* c#   :FUNCIONA LOS METODOS ASYNC DESDE .net framework 4.5 HACIA ARRIBA
+
+* C#   : Para poder ocupar en los "aspx" se le debe agregar  en el <%@Page /> el siguiente valor "Async="true""
+* c#   : Async="true" Significa que el aspx es asincrono
+* c#   : Cuando el aspx es asincrono siempre se le debe agregar al page_Load antes "async" Ej: protected async void Page_Load(object sender, EventArgs e)
+
+
+
+
+/********************Declaraciones dudas****************************/
+
+
+* await   : * Siempre se usa para llamar el metodo asincrono tambien para decirle que espere a que se ejecute el metodo para continuar
+            * proporciona una forma sin bloqueo para iniciar una tarea y luego continuar la ejecución cuando se completa esa tarea
+
+* async   : se usa para construir el metro asincrono
+
+* Task    : * Task es una tarea async tambien Se usa para indicar que valor se devolvera asincrono Ej: async Task<bool>
+            * son clases que puede utilizar para razonar acerca de las tareas que están en curso
+            *
+
+
+
+
+
+****************************************************Formas de Uso ***************************************************
+
+ * await Task.WhenAll(metodoAsync1, metodoAsync1 , metodoAsync1 );                                       //Permitira que se ejecute los 3 metodos asincronicamente y continuara sincronicamente una vez que finalizen estos metodos
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////7
+
+
+Otra opción es usar WhenAny , que devuelve un Task<Task>que se completa cuando se completa cualquiera de sus argumentos. 
+Puede esperar la tarea devuelta, sabiendo que ya ha finalizado. 
+El siguiente código muestra cómo puede usar WhenAny para esperar a que finalice la primera tarea y luego procesar su resultado. 
+Después de procesar el resultado de la tarea completada, elimina esa tarea completada de la lista de tareas pasadas WhenAny.
+
+
+var breakfastTasks = new List<Task> { eggsTask, baconTask, toastTask };  // Se guarda una lista de tarea 
+while (breakfastTasks.Count > 0)
+{
+    Task finishedTask = await Task.WhenAny(breakfastTasks); //Se guardara en finishedTask  el resultado del metodo que se ha finalido para despues realizar una compracion de que metodo es 
+
+    if (finishedTask == eggsTask)
+    {
+        Console.WriteLine("eggs are ready");
+    }
+    else if (finishedTask == baconTask)
+    {
+        Console.WriteLine("bacon is ready");
+    }
+    else if (finishedTask == toastTask)
+    {
+        Console.WriteLine("toast is ready");
+    }
+    breakfastTasks.Remove(finishedTask);    // Se eliminara en la lista de tareas el metodo realizado 
+}
+
+
+/************************Preguntas************************/
+
+
+* Que hace referencia esto while (await reader.ReadAsync()) 
+
+* a los metodos de las clase que nos ofrece c# siempre se le debe agregar Async al final o en que caso se agrega
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

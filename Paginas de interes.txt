@@ -13,7 +13,7 @@ https://giphy.com/
 /***css****/
 /*Generador de Sombra */
 https://www.cssmatic.com/es/box-shadow
-
+https://animate.style/
 
 
 

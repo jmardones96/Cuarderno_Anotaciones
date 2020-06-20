@@ -1,0 +1,20 @@
+
+
+
+Hello Greetings
+
+** hi                                    // Hola 
+** hello. how is it going?               // Hola. ¿Cómo va?
+** good morning. how's everything?       // Buenos días. ¿como esta todo?
+** good afternoon                        // Buenas tardes
+** hi. how are you                       // Hola. cómo estás
+** good evening                          // Buenas Noches
+
+
+Godbye Greetings
+
+** Bye                                   // Adios
+** Good Bye                              // Adios
+** See you                               // Nos Vemos
+** So long!                              // Hasta la vista
+** See you later                         // Nos vemos mas tarde

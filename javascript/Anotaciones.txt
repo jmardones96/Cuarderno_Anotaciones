@@ -18,7 +18,9 @@ undefined      = Valores reservados
 
 
 
-
+** =     // no es para un if sino para guardar
+** ==    // igual no importa el tipo de dato
+** ===  // igual y si importa el tipo de dato
 
 
 
@@ -48,7 +50,7 @@ undefined      = Valores reservados
 
 
 ** print()   //Abre la opcion de imprimir una captura de la pantalla de la pagina
-
+** prompt
 
 
 
@@ -202,12 +204,92 @@ esto nos ayudará a validar si estas condiciones son verdaderas o falsas en ciert
 
 
 
+/****************************************************Arrays************************************************/
+  
+** Estructura de dato tipo objeto
+
+   
+  // Un array es una estructura de datos, es un objeto tipo lista de alto nivel.
+
+// Los arrays son objetos de tipo lista cuyo prototipo tiene métodos para realizar operaciones de recorrido y mutación
+
+var frutas = []; // Array Literal Syntax 
+
+var frutas = ["Manzana", "Platano", "Cereza", "Fresa"]; 
+console.log(frutas); 
+console.log(frutas.length); // length es una propiedad del array
+
+// Acceder (por índice) a un elemento del Array
+console.log(frutas[0]);   // Los arrays iician en "0" 
+
+
+// === Metodos para mutar arrays ===
+
+
+// .push();
+
+ var masFrutas = frutas.push("Uvas"); // Esté metodo añadirá "Uvas" añ final del array
+ console.log(frutas);
+
+// .pop();
+
+ var utlimo = frutas.pop("Uvas"); // Eliminará "Uvas" del final 
+ console.log(frutas);
+
+// unshift()
+
+var nuevaLogitud = frutas.unshift("Uvas"); // Añade "Uvas" al inicio 
+console.log(frutas);
+
+// shift()
+
+var borrarFruta = frutas.shift("Manzana"); // Elimina "Manzana" del inico
+console.log(frutas);
+
+// .indexOf();
+
+var posicion = frutas.indexOf("Platano"); // te dará la posición de ese item en el array
+console.log(frutas);
 
 
 
 
 
 
+******************************Opjetos********************************************
+
+// Un objeto es una colección de propiedades, y una propiedad es una asociación de key (nombre, o clave) y valores.
+
+var objecto = {}; // Object Literal Syntax 
+
+var miAuto = {
+    marca: "Toyota",  // key - value 
+    modelo: "Corolla",
+    annio: 2020,
+    detallesDelAuto: function() {   // Metodo de un objeto (una función dentro de un objeto)
+      return `Auto ${this.modelo} ${this.annio}`;
+  }
+};
+
+miAuto.annio 
+miAuto.modelo 
+
+miAuto.detallesDelAuto(); 
+
+
+// Función constructora 
+
+function auto(marca, modelo, annio) {  // Creas una función con los parametros que va a recibir, 
+    this.marca = marca;   // Utilizamos el "this" para asignar valores a las propiedades del objeto 
+    this.modelo = modelo;
+    this.annio = annio;
+}
+
+var newAuto = new auto("Tesla", "Model 3", 2020);
+
+
+
+  
 
 
 

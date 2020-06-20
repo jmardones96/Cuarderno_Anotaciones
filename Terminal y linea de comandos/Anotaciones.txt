@@ -1,0 +1,132 @@
+.. --> directorio padre
+. --> directorio actual
+
+
+********************************Comandos******************************************
+
+* date                          : Muestra la Fecha
+
+* echo                          : Muestra mensaje en pantalla
+
+* man                           : Muestra informacion de los comandos EJ : man date  //Muestra todas las posibilidades que puede brindar el comando
+
+* mkdir                         : Crear un directorio EJ: mkdir "Nombre"
+
+* pwd                           : Muestra en la ruta en la que te encuentras
+
+* cd                            : permite cambiar de diretorio EJ : cd jmmj
+
+* cd ..                         : Retocre en la ruta que se encuentra
+
+* cd ~                          : Te lleva al Home
+
+* cp                            : Permite copiar un archivo EJ : cp .\archivo.txt .\directorioAcopiar
+
+* rm                            : PErmite Borrar un archivo  EJ rm archivo.txt
+
+* rmdir                         : Permite eliminar EL direcotrio EJ : rmdir archivo.txt
+
+* mv                            : Permite mover un archivo a otro directorio EJ : mv .\archivo .\lugarAmover
+
+
+* ls -t                         : Ordena los archivos por fecha de modificación
+* ls -x                         : Ordena elementos primero por nombre y después por extensión
+* ls -X                         : Ordena los elementos primero por extensión y luego por nombre
+* ls -l                         : Muestra toda la información: usuario, grupo, permisos, tamaño, fecha y hora de creación
+* ls -a                         : Lista todos los archivos incluyendo aquellos que se han definido como ocultos
+* ls -lh                        : Muestra la misma información que ls -l pero con las unidades de tamaño en KB, MB
+* ls -R                         : Muestra el contenido de todos los subdirectorios de forma recursiva
+* ls -S                         : Ordena los resultados por tamaño de archivo
+
+
+***********************************Crear****************************************************************
+
+* mkdir                         : Crear un directorio EJ: mkdir "Nombre"
+* cp                            : Permite copiar un archivo EJ : cp .\archivo.txt .\directorioAcopiar
+
+
+***********************************ELiminar****************************************************************
+* rm                            : PErmite Borrar un archivo  EJ rm archivo.txt
+* rmdir                         : Permite eliminar EL direcotrio EJ : rmdir archivo.txt
+
+
+
+***********************************Editar****************************************************************
+
+* cp                            : Permite copiar un archivo EJ : cp .\archivo.txt .\directorioAcopiar
+
+
+***********************************Auditoria****************************************************************
+
+
+* echo                          : Muestra mensaje en pantalla
+* date                          : Muestra la Fecha
+* man                           : Muestra informacion de los comandos EJ : man date  //Muestra todas las posibilidades que puede brindar el comando
+* pwd                           : Muestra en la ruta en la que te encuentras
+* cd                            : permite cambiar de diretorio EJ : cd jmmj
+* cd ..                         : Retocre en la ruta que se encuentra
+* cd ~                          : Te lleva al Home
+* mv                            : Permite mover un archivo a otro directorio EJ : mv .\archivo .\lugarAmover
+
+* ls -t                         : Ordena los archivos por fecha de modificación
+* ls -x                         : Ordena elementos primero por nombre y después por extensión
+* ls -X                         : Ordena los elementos primero por extensión y luego por nombre
+* ls -l                         : Muestra toda la información: usuario, grupo, permisos, tamaño, fecha y hora de creación
+* ls -a                         : Lista todos los archivos incluyendo aquellos que se han definido como ocultos
+* ls -lh                        : Muestra la misma información que ls -l pero con las unidades de tamaño en KB, MB
+* ls -R                         : Muestra el contenido de todos los subdirectorios de forma recursiva
+* ls -S                         : Ordena los resultados por tamaño de archivo
+
+
+
+
+
+
+
+
+
+
+********************************Manejo de archivos de texto y utilidades interactivas*****************************
+
+
+
+* Vim                           :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

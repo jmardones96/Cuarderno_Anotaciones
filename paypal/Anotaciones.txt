@@ -1,0 +1,101 @@
+
+
+
+   ***   Pagos en Linea
+
+
+Los pagos en línea cuentan con procesadores de pago (PP) los cuales funcionan como intermediario entre el vendedor el cliente y el banco.
+Una vez que un cliente entra a mi sitio web y da click a comprar, el PP verifica que la herramienta de pago sea válido, seguro y cuenta con el monto necesario para cumplir con la transacción.
+Si el PP comprueba que está todo correcto, el PP le avisa al vendedor que puede hacer entrega del servicio o producto
+
+
+
+
+
+
+
+
+
+
+
+*********************************************************¿Qué opciones existen para aceptar pagos en línea?***********************************************************
+*********************************************************¿Qué opciones existen para aceptar pagos en línea?***********************************************************
+* MercadoPago
+* PayU
+* Stripe
+* Pay pal
+
+
+
+
+*********************************************************Cuanto cobra Paypal***********************************************************
+
+* PayPAl   : Cobra un 2.9% + $0.30 USD 
+             Osea si cobras $100 USD Terminas ganando un total de $96.80 y le pagas a Paypal $3.20 (2.9% + $0.30)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

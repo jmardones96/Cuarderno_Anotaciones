@@ -1,0 +1,56 @@
+
+
+/*Estructura de TRy Catch*/
+
+  
+try
+ {
+     /*Se ejecuta el codigo*/
+ }
+catch
+ {
+    /*Si hay erro se ejecuta este bloque*/
+ }
+finally
+ {
+   /*se ejecuta a pesar de todo*/
+ }
+
+
+
+
+
+
+/***********************************************Forma de capturar una exepcion********************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
