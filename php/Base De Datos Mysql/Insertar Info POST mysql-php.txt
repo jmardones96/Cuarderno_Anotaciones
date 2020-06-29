@@ -1,0 +1,30 @@
+//Se conprueba que se esta reciviendo informacion 
+//por medio del method POST
+if (isset($_POST['save_task']))
+{
+  /*Toma la informacion de los name dados dentro el form*/ 
+  $titulo = $_POST['title'];
+  $Descripcion = $_POST['Descripcion'];
+
+  echo $Descripcion;
+  echo $titulo;
+
+/*La consulta a base de datps*/
+ $query = "INSERT INTO task(title , descripcion) VALUES ('$titulo' , '$Descripcion')";
+ 
+ //Se guarda en una varible el resultado de la consulta
+ $resul = mysqli_query($conn , $query);
+
+ if(!$resul)
+ {
+   die("Fallo la query");
+ }
+ else
+ {
+     echo 'guardaro';
+ }
+}
+else{
+    echo 'error';
+}
+?>

@@ -1,0 +1,26 @@
+
+* mysqli_connect() //Metodo de conexion a base de datos de php
+
+
+
+<?php
+
+//Variable de conexion
+$conn = mysqli_connect(
+'localhost',  //Servidor de la base de datos
+'root', //Usiario
+'', //Clave
+'php_mysql_crud' // Nombre de la base de datos
+);
+
+//El if dice
+//Si existe el objeto de coneccion es que conecto
+//¨******isset($conn)  : objeto de php que comprueba conexion a bd : Retorna boleano
+/*
+if (isset($conn))
+{
+    //Si Retorna True Es que se conectro perro
+echo 'Conectado a la puta base de Datos Wey';
+}
+*/
+?>

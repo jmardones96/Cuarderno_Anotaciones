@@ -1,0 +1,13 @@
+
+
+
+Objetos PHP
+  
+* mysqli_connect()     //Metodo de conexion a base de datos de php 
+   EJ : " $resul = mysqli_query($conn , $query);" 
+
+* _POST['title'];     //metodo que retonar valor de info enviar por method POST
+   EJ : "$Descripcion = $_POST['Descripcion'];"
+
+* header()            //Permite el redireccionamiento de pagina
+   EJ : header("Location: index.php");

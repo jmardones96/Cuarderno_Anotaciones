@@ -1,0 +1,29 @@
+/***************************************************************************************/
+
+/*******OBLIGACION TENER ANTER**************/
+
+* Se debe tener mysql como extencion y sql syntax en VS
+* Se debe tener Xampp instalado y corriendo
+* Se debe tener phpmyadmin para poder conectar y reflejar la creacion de datos
+
+
+/*****************************************************/
+
+
+/**************************Paso a Paso*****************************/
+
+
+* Al tener la extencion de mysql se debe reflejar la seccion de mysql en VS
+* A un costado del titulo de la seccion hay una cruz "+" HACER CLICK
+* se mostrara en la parte superior un testbox de visual que pide los siguientes datos:
+ - Nombre del Servidor (localhost)
+ - Usuario de mysql (root)
+ - Password ()
+ - Puerto del servidor local de sql (el puerto de mysql en xampp que se determino)
+ - certificado ssl ()
+
+* Una vez al ingresar los datos debe aparecer en la seccion la base de datos localhost
+* Verificar que contenga la misma informacion que en phpmyadmin
+* comprobar con consultas 
+
+/**************************Paso a Paso*****************************/

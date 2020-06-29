@@ -1,0 +1,3 @@
+ /*Toma la informacion de los name dados dentro el form*/ 
+  $titulo = $_POST['title'];
+  $Descripcion = $_POST['Descripcion'];

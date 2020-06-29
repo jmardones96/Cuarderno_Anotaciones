@@ -1,0 +1,22 @@
+/****************************/////////////////****************************************/
+xampp mysql shutdown unexpectedly this may be due to a blocked port missing dependencies
+/****************************/////////////////****************************************/
+
+* ir a la siguiente ruta de tu carpeta xamp "C:\Users\Joaquin\Documents\xampp\mysql\data"
+* Elimina todos los archivos que no sean "Carpetas"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

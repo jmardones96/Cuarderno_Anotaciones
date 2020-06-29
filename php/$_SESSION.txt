@@ -1,0 +1,6 @@
+
+* $_SESSION           //objeto que permite guarda la informacion de una pagina a otra
+   EJ : $_SESSION['msj'] = 'Se Guardo Correctamente';     //Guardar info al objero
+   EJ : <?= $_SESSION['tipo_msj '];?>         //Utilizar el varlo guardado en cuaqluier lugar
+
+* session_unset();     //Limpia la informacion del objeto $_SESSION

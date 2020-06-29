@@ -1,0 +1,3 @@
+/***********************************************************/
+
+* Tener presente que al crear una base de datsos  base de datos con VS el tipo  debe se "utf8_unicode_ci"

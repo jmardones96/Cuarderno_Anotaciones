@@ -1,0 +1,5 @@
+/*******************************DATOS IMPORTANTE******************************************/
+
+* Para que php te corra con mysql y xammp DEBES CREAR EL PROYECTO EN LA SIGUIENTE RUTA
+ - xampp/htdocs/NombredetuCarpeta
+

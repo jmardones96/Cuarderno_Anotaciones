@@ -1,0 +1,24 @@
+
+
+ * Se selecciona "Netstat" PAra verificar si el puerto 80 esta ocupado
+ * basta que cualquier puerto se encuentre usado y no se usara apache
+ * ir a configuracion para realizar el cambio de puerto
+ * ir a cambio de puerto de apache
+ * cambiar el pueto "80" por "82" 
+ * cambiar el puerto "443" por "4432"
+ *  ir la carpeta de "xampp"
+ * accedera la carpeta "Apache"
+ * Carpeta "conf"
+ * Abrir el archivo "httpd.conf" 
+ * Cambiarel puerto "80" por el puerto "82" en todos los lugaresque aparesca 
+   lo siguiente "Listen 80"
+ * Solo se cambia el que sale en listen
+ * buscar donde indical el locahost para agregar el nuevo se busca la siguiente palabra
+   "ServerName localhost:80" se cambia por el "82"
+
+ * Despues en la "Misma carpeta" entramos a la carpeta de "Extra"
+ * Se abre el Archivo de "httpd-ssl-conf
+ * se realiza el cambio de puerto de "443" a "4432"
+ * Se realiza el cambio en la palabra "Listen 443"
+ 
+

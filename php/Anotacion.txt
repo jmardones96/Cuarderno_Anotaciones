@@ -1,0 +1,20 @@
+
+
+
+Objetos PHP
+  
+* mysqli_connect()     //Metodo de conexion a base de datos de php 
+   EJ : " $resul = mysqli_query($conn , $query);" 
+
+* $_POST['title'];     //metodo que retonar valor de info enviar por method POST
+   EJ : "$Descripcion = $_POST['Descripcion'];"
+
+* header()            //Permite el redireccionamiento de pagina
+   EJ : header("Location: index.php");
+
+* $_SESSION           //objeto que permite guarda la informacion de una pagina a otra
+   EJ : $_SESSION['msj'] = 'Se Guardo Correctamente';     //Guardar info al objero
+   EJ : <?= $_SESSION['tipo_msj '];?>         //Utilizar el varlo guardado en cuaqluier lugar
+
+* session_unset();     //Limpia la informacion del objeto $_SESSION
+  EJ: <?php session_unset();} ?>  <!--Se cierra if-->
