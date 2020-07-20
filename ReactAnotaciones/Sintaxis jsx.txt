@@ -1,0 +1,66 @@
+SX es una extensión de JavaScript creada por Facebook para el uso con su librería React. Sirve de preprocesador (como Sass o Stylus a CSS) y transforma el código a JavaScript.
+
+De primeras te puede parecer que estás mezclando código HTML dentro de tus ficheros JavaScript, pero nada más lejos de la realidad. A continuación te lo explico.
+
+React al basar el desarrollo de apps en componentes, necesitamos crear elementos HTML que definan nuestro componente, por ejemplo <div>, <p>, <img>, etc...
+
+También necesitaremos indicar cuando se trata de componentes creados por nosotros con React, como puede ser un <Image />, <List />, etc...
+
+Todo esto podemos hacerlo con JavaScript con los métodos que nos ofrece React como React.createElement. Veamos un ejemplo:
+
+Imagina que quieres crear un componente <Icon /> que está definido por un div, un img y algunas clases de CSS. Con JavaScript sería algo así:
+
+1var image = React.createElement('img', {
+2  src: 'react-icon.png',
+3  className: 'icon-image'
+4});
+5
+6var container = React.createElement('div', {
+7  className: 'icon-container'
+8}, image);
+9
+10var icon = React.createElement('Icon', {
+11className: 'avatarContainer'
+12}, container);
+13
+14ReactDOM.render(
+15  icon,
+16  document.getElementById('app')
+17);
+Con esto tendríamos un componente <Icon /> que se traduciría al siguiente código HTML:
+
+1<div class='icon-container'>
+2  <img src='icon-react.png' class='icon-image' />
+3</div>
+Si tuviésemos el siguiente CSS:
+
+1.icon-image {
+2  width: 100px
+3}
+4.icon-container {
+5  background-color: #222;
+6  width: 100px
+7}
+El resultado en el navegador sería así:
+resultado react jsx
+
+Ahora veamos como se haría lo mismo pero empleando sintaxis JSX:
+
+1var Icon = (
+2  <div className='icon-container'>
+3    <img 
+4      src='icon-react.png'
+5      className='icon-image'
+6    />
+7  </div>)
+8
+9ReactDOM.render(Icon, document.getElementById('app'))
+Como puedes ver es mucho más práctico y legible esta sintaxis. Es prácticamente como escribir HTML pero no estás escribiendo HTML, es JavaScript.
+
+Lo único que has de tener en cuenta es que hay algunas palabras reservadas en JavaScript y JSX te obliga a nombrar algunos atributos de otra manera, como es el caso de las class que para definir clases de CSS que con JSX debemos escribir className.
+
+A medida que nuestra aplicación va creciendo y tenemos componentes más grandes, que manejan distintos eventos, esta forma de usar JSX nos va a ayudar mucho a agilizar nuestros desarrollos.
+
+Recuerda, no es escribir HTML dentro de JS, es una forma de crear JS de una manera más práctica ;)
+
+Para poder utilizar JSX, necesitarías añadir una librería extra a tu HTML, pero es más aconsejable utilizar un bundler integrado en tu entorno de desarrollo, como puede ser WebPack o Browserify, y que éste le aplique la transformación antes de publicar tu código en producción. De esto hablaré en próximas entradas.

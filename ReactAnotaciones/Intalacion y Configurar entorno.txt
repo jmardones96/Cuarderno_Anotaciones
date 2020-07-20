@@ -1,0 +1,70 @@
+
+
+Primera parte de inicializacion
+----------------------------------------------------------------------------
+En este punto se inicializara el proyecto con git y su entorno de entrada con react
+
+
+* Se crea carpeta de proyecto
+
+* Se inicializa proyecto con gitHub
+*/ git init   // Para inicializar github
+
+* Inicializar Proyecto con la informacion del packpge de json
+*/ npm init -y
+* Se corre comando y muesta la estructura
+
+* Se abre visual code
+*/ code .
+
+
+
+
+Segunda Parte de Estructuracion del Protyecto
+----------------------------------------------------------------------------
+Se realiza la estrucura base del proyecto a realizar
+
+
+1) - Primero se establece donde se encontraran los componentes creados y las configuraciones
+     * src
+
+1.1- Contendra todos los componetes creados que tendra nuestro sistema  /dentro de src
+    * Components
+
+1.2- Se crea archibo base de react a trabajar /dentro de src
+    * index.js
+
+2) - Se crea una carpeta que contendra todos los elementos que seran llevado a produccion 
+     todos lo elementos que se publicaran en el servidor
+     * public
+
+2-1 Se crear archivo base que se mostrara   /dentro de public
+    * index.html
+
+
+
+
+Tercera Instalar React Para obtener sus librerias
+-----------------------------------------------------------------------------
+
+
+1) - Abrir consola de comando y ubicarse en la carpeta de proyecyo ya inicializada en git
+
+2) - Este comando permitira instalar REact y React-dom
+    * npm install react react-dom
+   //esto debe crear archivos y la carpeta node_modules
+
+3) - una vez instalada Observar las vulnebilidades o warning
+
+
+4) - revisar proyecto y documentos instalados
+
+
+
+
+
+
+
+
+
+

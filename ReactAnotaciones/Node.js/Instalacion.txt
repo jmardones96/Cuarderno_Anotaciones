@@ -1,0 +1,13 @@
+
+
+
+    1 - Se instala node desde su pagina node.js
+    2 - Se abre la consoloda de comando cmd
+    3 - se digita !! node --version !!! // Es para saber que version se instalo
+    4 - Se digita !! npm --version !! // para saber la version de comando
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+ 

@@ -1,0 +1,40 @@
+//Se puede llamar los componentes con extenciones
+//  js
+//  jsx
+
+//Es un componente precentacional
+
+//importar react
+import React from 'react';
+
+const HolaMund = () =>{
+
+    const Hello = '!Hola Perros Mundo'; //Variable constate de texto para utilizar
+    const isTrue = true;  // Variable booleana
+
+    return(
+    //Html a Retornar 
+    <div className="HolaMundo">
+
+         <h1>{Hello}</h1>
+         <h2>Curso basico ecencial</h2>
+         <img src="https://arepa.s3.amazonaws.com/react.png" alt="React"></img>
+         
+         {//Validacion dentro del html a retornar
+             isTrue ? <h4>Holi h4 esto es true</h4> : <h5>Es falso es h5</h5>   //Booleano ? true : false ;
+         }
+
+         {
+             //Validacion dentro de html a retornar solo cuando sea verdaredo
+             isTrue && <h4>Soy verdadero!</h4>
+         }
+
+    </div>
+         
+    );
+
+
+};
+
+export default HolaMund
+

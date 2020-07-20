@@ -1,0 +1,14 @@
+<script type="text/javascript">
+     function solonumeros(e) {
+            var key;
+            if (window.event) // IE
+            {   key = e.keyCode;    }
+            else if (e.which) // Netscape/Firefox/Opera
+            {   key = e.which;    }
+            if (key < 48 || key > 57) 
+           {  return false;    }
+            return true;    }
+   </script>
+
+“Asp.net - Html”
+<asp:TextBox ID="txtCompraPara" onkeypress="javascript:return solonumeros(event)"   runat="server"></asp:TextBox>

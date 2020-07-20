@@ -1,0 +1,27 @@
+import React, {Component} from 'react'; //Importa react con estado de componente
+
+//Instancia de clase constructora de "Componente"
+class Stateful extends Component{
+    //Aca esta parte de la logica del ciclo de vida
+
+    constructor(props){
+    super(props);
+    this.state = {
+        hello: 'Hola Mundo'
+      }
+    }
+    
+    //Render permite retornar el HTML
+    render(){
+        return(
+         //{LLamado a objeto creado con su valor}
+          <h1>{this.state.hello}</h1>
+        )
+    }
+};
+
+//Exportamos el componentes 
+export default Stateful;
+
+
+

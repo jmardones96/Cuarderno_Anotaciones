@@ -1,0 +1,35 @@
+
+
+
+
+/**********************************************************/
+
+Paso a paso como se inicializa un proyecto de reac
+/**********************************************************/
+
+
+Obligatorio: Tener instalado node.js con anteriodidad
+
+
+
+1) -  Ingresar a carpeta donde se creara el proyecto
+
+2) -  Verificar verciones
+     *node --version
+     *npm --version
+
+3) - ingresar comando 
+     * npx create-react-app mi-pagina //Permite inicializar la libreria
+   //Si no permite dejar crear e inicializar el proyecto react , se debe ingresar el sigueinte comando
+   /* npm install -g create-react-app  //Instala un json
+   /* npx create-react-app mi-pagina  
+
+
+4) - Ingreso a la carpeta de mi proyecto creada por el comando anterior y comando lo siguiente 
+     dentro de la carpeta
+    * npm start   //Abre el navegador , confirmando la correcta instalacion de la libreria de React al proyecto
+
+
+
+
+

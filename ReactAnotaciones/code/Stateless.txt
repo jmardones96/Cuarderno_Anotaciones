@@ -1,0 +1,17 @@
+//Solo Precenta logica no tiene estado, solo es para la parte funcional
+import React from 'react';   //Importamo react
+
+
+
+//Esta cosntante es una funcion de tipo flecha
+//Retorna de inmediato html
+const Stateless = () =>{
+    return(
+      <h1>Hola Perros</h1>
+    ) ;
+};
+
+//Se realiza exportacion de componente
+export default Stateless;
+
+

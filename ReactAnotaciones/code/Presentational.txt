@@ -1,0 +1,7 @@
+import React from 'react'; // Importacion de React
+
+//Es un return Explicito 
+const Presentacional = () => <h1> Hola Mundo</h1>;
+
+//Exportamos el componente
+export default Presentacional ;

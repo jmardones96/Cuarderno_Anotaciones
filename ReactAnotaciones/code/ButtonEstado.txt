@@ -1,0 +1,48 @@
+//Importar react
+import React from 'react';
+//import React, {Component} from 'react'; //Importa react con estado de componente
+
+class ButtonEstado extends React.Component { //Importa react con estado de componente
+
+
+// El estate , es un objeto que le puede definir variables , que se pueden acceder al momento que se inicializa
+  state = {
+      count:0
+  }
+
+
+
+  //Objeto evento onClick
+handleClick = () => {
+    this.setState({
+        count: this.state.count + 1,
+    })
+}
+
+
+
+  render(){
+    //Destructuracion de Valor y el objeto state
+    const { count }  = this.state;
+
+    return (
+      <div>
+          <h1>Manzanas: {count} </h1>
+          <button type="button" onClick={this.handleClick}>
+              Click M
+          </button>
+      </div>
+    ) 
+
+ }
+
+}
+
+export default ButtonEstado;
+
+
+
+//El estado es una variable que se le puede pasar estados
+
+
+//LLamado de evento onclick

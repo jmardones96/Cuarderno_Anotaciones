@@ -1,0 +1,31 @@
+
+
+
+
+* React implementa la sintaxis "jsx"
+
+* Todos los archivos de componentes o todos lo elemento que se trabajen en React Inician con mayuscula
+
+* import React from 'react';  // Se importa react con mayuscula "R" pero se llama con minuscula "r"
+
+* se Utiliza "className" Para incorporar clases css a nuestro react
+
+
+
+
+* //importar componente
+   import Holamundo from './components/HolaMundo';
+
+* // Utilizar componente
+  <React.StrictMode>
+    <Holamundo />
+  </React.StrictMode>
+
+* //Evento Click
+  handleClick = () => {
+   //Acciones a realizar al momento del evento 
+    this.setState({
+        count: this.state.count + 1,
+    })
+}
+
