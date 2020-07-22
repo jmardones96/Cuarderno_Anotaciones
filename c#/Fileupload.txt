@@ -1,0 +1,59 @@
+
+
+
+/*****************/
+
+/*****************/
+
+
+
+
+
+/*****************/
+COnverciones
+/*****************/
+char[] charsToTrim = { '*', ' ', '\'' };
+
+* Guardar en variable
+- var fuDocumento = FileUpload_factura;
+
+* Obtener nombre
+- string Nombre_factura = FileUpload_factura.FileName.Trim(charsToTrim).ToLower();
+
+* Obtener los Bytes del documento
+- byte[] pdfBytes = FileUpload_factura.FileBytes;
+
+*Transformar PDF en base 64 
+  byte[] pdfBytes = fuDocumento.FileBytes;
+  string base64_doc = Convert.ToBase64String(pdfBytes);
+
+*Optener el postedfile
+ - int postedfile = fuDocumento.PostedFile.ContentLength;
+
+* Pasar a objeto FileInfo para obtener info
+- FileInfo fi_documento = new FileInfo(fuDocumento.FileName);
+
+
+
+
+
+
+/**************/
+Guardar Documento en la ruta indicada
+/**************/
+
+/1/ -  stream = File.Create(RutaArchivo);
+      //indicar la ruta donde sera creado
+
+/2/ - byte[] byteArray = Convert.FromBase64String(base64Binary);
+      //Guardar el documento en Array
+
+/3/ - stream.Write(byteArray, 0, byteArray.Length);
+      //Guardar en la carpeta el documento indicado escribiendo el texto que trae el bytearray
+
+/4/ -  stream.Close();
+   //Cerrar la conexion
+
+
+
+

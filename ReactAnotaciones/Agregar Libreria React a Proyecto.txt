@@ -33,3 +33,9 @@ Obligatorio: Tener instalado node.js con anteriodidad
 
 
 
+
+
+5) - nom install @babel/core babel-loader @babel/preset-env @babel/preset-react
+    //Instalar babel para que el javascript sea interpretado en todos los navegadores
+
+

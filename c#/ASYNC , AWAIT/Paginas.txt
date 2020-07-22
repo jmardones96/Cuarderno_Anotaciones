@@ -1,0 +1,6 @@
+https://docs.microsoft.com/es-es/dotnet/csharp/async
+
+https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/concepts/async/task-asynchronous-programming-model
+
+
+https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/concepts/async/

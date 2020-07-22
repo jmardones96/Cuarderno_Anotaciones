@@ -59,10 +59,20 @@ Tercera Instalar React Para obtener sus librerias
 
 4) - revisar proyecto y documentos instalados
 
+5) -  Instalar babel para que el javascript sea interpretado en todos los navegadores
+     * nom install @babel/core babel-loader @babel/preset-env @babel/preset-react
+    //Instalar babel para que el javascript sea interpretado en todos los navegadores
 
 
 
+6) - Crear Configuracion de libreria de babel
+    * .babelrc
 
+7) - Crear objeto de babel con las configuraciones creadas
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ]
 
 
 

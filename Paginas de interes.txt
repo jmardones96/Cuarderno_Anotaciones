@@ -46,3 +46,10 @@ https://pokeapi.co/
 /*Paginas de PAgo*/
 https://www.paypal.com/
 https://www.payulatam.com/cl/tarifas/
+
+
+
+/*Documentacion Asyn y await de microsoft*/
+https://docs.microsoft.com/es-es/dotnet/csharp/async
+https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/concepts/async/task-asynchronous-programming-model
+https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/concepts/async/
