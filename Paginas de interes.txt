@@ -47,6 +47,8 @@ https://pokeapi.co/
 https://www.paypal.com/
 https://www.payulatam.com/cl/tarifas/
 
+/*Tipos MINE*/
+https://programadorphp.es/listado-mime-type-para-internet-information-server
 
 
 /*Documentacion Asyn y await de microsoft*/

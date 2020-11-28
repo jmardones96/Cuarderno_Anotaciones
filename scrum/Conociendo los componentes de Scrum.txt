@@ -1,0 +1,27 @@
+Componentes de Scrum
+
+1 Equipo de Scrum
+
+El equipo de Scrum es auto organizado y multifuncional.
+
+a) Dueño del producto (Product Owner). Responsable de maximizar el valor del producto
+b) Scrum Master. Responsable de promover y apoyar Scrum.
+c) Equipo de desarrollo (Development Team). Profesionales que realizan el trabajo de entregar un incremento de producto “Terminado”.
+
+2 Eventos de Scrum
+
+En Scrum existen eventos predefinidos con el fin de crear regularidad y minimizar la necesidad de reuniones no definidas en Scrum.
+
+a) Sprint. Es el corazón de Scrum donde se crea un incremento del producto.
+b) Planificación de Sprint (Sprint planning). Ceremonia para definir qué se hará durante el sprint.
+c) Scrum Diario (Daily stan-up). Reunión diaria de todo el equipo de desarrollo.
+d) Revisión de Sprint (Sprint review). Es donde se muestra el incremento desarrollado durante el sprint.
+e) Retrospectiva de Sprint (Sprint retrospective). Oportunidad para aplicar mejora continua.
+
+3 Artefactos de Scrum
+
+Los artefactos de Scrum representan trabajo o valor en diversas formas que son útiles para proporcionar transparencia y oportunidad para la inspección y adaptación.
+Son aquellos elementos que definen que quiere el cliente, pero son visibles para todas las personas que trabajan en el proyecto.
+
+a) Lista del producto (Product Backlog). Es una lista ordenada de todo lo que se conoce que es necesario en el producto.
+b) Lista de pendientes del Sprint (Sprint Backlog). Elementos de la lista de producto seleccionados para el sprint.

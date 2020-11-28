@@ -74,6 +74,12 @@ Tercera Instalar React Para obtener sus librerias
         "@babel/preset-react"
     ]
 
+8) - npm install webpack webpack-cli html-webpack-plugin html-loader  --save-dev
+   //Libreria que nos permite compilar multiples archivos   (JavaScript, HTML, CSS, imágenes) en uno
+
+
+9) - Crear webpack.cong.js
+     // herramienta que nos ayuda a compilar multiples archivos (JavaScript, HTML, CSS, imágenes) en uno solo
 
 
 

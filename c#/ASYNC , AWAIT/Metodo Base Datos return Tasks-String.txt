@@ -1,0 +1,56 @@
+ public async Task<string> url_factura_repositorio(int id_cliente, int id_folio_repositorio, string cuentaUsuario)
+        {
+
+            string url = string.Empty;
+            using (SqlConnection sqlConn = new SqlConnection(this.strConn))
+            {
+                sqlConn.Open();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SP_URL_FACTURA_REPO", sqlConn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@id_cliente", id_cliente));
+                    cmd.Parameters.Add(new SqlParameter("@folio_repositorio", id_folio_repositorio));
+                    cmd.Parameters.Add(new SqlParameter("@cuenta_usuario", cuentaUsuario));
+
+                    using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync()) url = reader["URL"].ToString();
+                    }
+
+                }
+                catch (SqlException sql)
+                {
+                    log.Error($"()=> Usuario : {cuentaUsuario}, Exception : {sql.Message}");
+
+                    switch (sql.Number)
+                    {
+                        case -2:
+                            throw new ArgumentException("3040");
+                        case 2601:
+                            throw new ArgumentException("3041");
+                        case 2812:
+                            throw new ArgumentException("3042");
+                        case 8114:
+                            throw new ArgumentException("3043");
+                        case 18452:
+                            throw new ArgumentException("3044");
+                        case 4060:
+                            throw new ArgumentException("3045");
+                    }
+                }
+                catch (Exception e)
+                {
+                    log.Error($"()=> Usuario : {cuentaUsuario}, Exception : {e.Message}");
+                    throw new ArgumentException("3046");
+                }
+                finally
+                {
+                    if (sqlConn != null)
+                    {
+                        sqlConn.Close();
+                    }
+                }
+            }
+            return url;
+        }
